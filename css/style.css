@@ -6,21 +6,73 @@
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
   }
+html{ font-size: 14px;
+}
   li {
     list-style-type: none;
   }
   a {
+    display: block;
     text-decoration: none
   }
-  .nav {
-    display: flex;
-  }
+
+
+  /* FIN DE RESET Y COSAS PREDETERMINADAS  */
+
+
+.main-header{
+  padding: 10px;
+  background-color: #eee;
+  display: flex;
+  flex-flow: row wrap;
+  height: 15vh;
+}
+
+.main-header .logo {
+   align-self: flex-start;
+   flex-basis:50%;
+   order: 1;
+}
+.main-header img {
+width: 60px;
+height: 40px;
+}
+.main-header .busqueda {
+  border-radius: 50%;
+  margin-left: 25%;
+   order: 3;
+}
+.main-header input {
+  border-radius:10px;
+  height: 3vh;
+  padding: 2px;
+  font-size: 1rem;
+}
+
+.main-header nav {
+  order: 2;
+     flex-basis:50%;
+     display: flex;
+     flex-flow: row nowrap;
+
+}
+.main-header nav ul {
+  display: none;
+}
+
+.main-header nav img {
+  margin-left: 70%;
+  width: 35px;
+  height: 30px;
+}
+
+
   .footer {
     display: flex;
   }
-  @media /*tamaño tablet*/ {
+  @media (min-width:1024px) {
 
   }
-@media /*Tamaño desktop*/ {
+@media  (min-width:2048px) {
 
 }
