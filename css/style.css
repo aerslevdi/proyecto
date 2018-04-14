@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none
+  }
+  .nav {
+    display: flex;
+  }
+  .footer {
+    display: flex;
+  }
+  @media /*tamaño tablet*/ {
+
+  }
+@media /*Tamaño desktop*/ {
+
+}
