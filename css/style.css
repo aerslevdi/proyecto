@@ -15,7 +15,7 @@ html{ font-size: 14px;
     display: block;
     text-decoration: none
   }
-
+body{ background-color: rgb(227, 227, 227);}
 
   /* FIN DE RESET Y COSAS PREDETERMINADAS  */
 
@@ -39,17 +39,25 @@ height: 40px;
 }
 .main-header .busqueda {
   border-radius: 50%;
-  margin-left: 25%;
+  width: 100%;
+
    order: 3;
+}
+.main-header form {
+  width: 50%;
 }
 .main-header input {
   border-radius:10px;
   height: 3vh;
+  width: 100%;
+  margin-left: 50%;
   padding: 2px;
-
+background-color: rgb(217, 217, 217);
   font-size: 1rem;
 }
-
+.main-header .barra {
+   width: 100%;
+}
 .main-header nav {
   order: 2;
      flex-basis:50%;
@@ -69,28 +77,130 @@ height: 40px;
 /* FIN DE HEADER */
 
 .destacado {
- background-color: rgb(227, 227, 227);
-  padding: 10px;
+
+
   display: flex;
   flex-flow: row wrap;
 }
 
 .destacado .noticia {
-margin-top: 10px;
+margin-top: 20px;
 flex-basis: 100%;
 height: 20vh;
-  border-radius: 20px;
+
 background-color: grey;
+  overflow:hidden;
+  position: relative;
 
 }
 
+.destacado .noticia img {
+  width: 100%;
 
-  .footer {
+  height: 20vh;
+
+  border-spacing: 0;
+z-index: 1;
+}
+
+.destacado .noticia .abaj {
+  width: 100%;
+  height: 8vh;
+  padding: 3px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(187, 188, 190,0.5);
+  z-index: 2;
+}
+
+.destacado .noticia .abaj h2 {
+  font-size: 1.3rem;
+  color: rgb(17, 16, 15);
+font-weight: lighter;
+text-align: center;
+margin-top: 5px;
+}
+
+.sexto {
+  display: none;
+}
+
+/* FIN DESTACADO */
+
+.quien {
+width: 100%;
+height: 25vh;
+margin-top: 20px;
+background-color: rgb(112, 99, 124);
+}
+
+
+  footer {
+    margin-top: 20px;
+    border: 15px;
+    background-color: rgb(162, 173, 181);
     display: flex;
-  }
-  @media (min-width:1024px) {
+    padding: 15px;
+    flex-flow: row wrap;
 
   }
-@media  (min-width:2048px) {
+  footer ul {
+display: flex;
+
+
+
+  }
+ footer ul li {
+flex-grow: 1;
+margin:10px;
+
+ }
+.fondo {
+
+  margin-left: 150px;
+}
+
+
+/* FIN DE FOOTER Y DISENO MOBILE */
+
+
+  @media (min-width:660px) {
+
+    .destacado {
+      padding: 20px;
+
+    }
+   .destacado .noticia {
+     flex-basis: 45%;
+     margin: 15px 15px ;
+   }
+   .sexto{display:block;
+   }
+
+   .main-header{
+     padding: 20px;
+
+   }
+   .main-header .busqueda{
+     width: 100%;
+     margin-left: 0;
+   }
+   .main-header .barra {
+     width: 100%;
+   }
+.main-header form {width: 50%
+
+}
+.main-header input {
+  height: 4vh;
+margin-left: 50%;
+   width: 100%;
+  }
+  .main-header nav img {
+    margin-left: 85%;
+
+    width: 45px;
+    height: 45px;
+@media  (min-width:1248px) {
 
 }
