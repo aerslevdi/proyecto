@@ -11,6 +11,9 @@ html{ font-size: 14px;
   li {
     list-style-type: none;
   }
+  a:focus{
+    color:rgb(68, 67, 67);
+  }
   a {
     display: block;
     text-decoration: none
@@ -38,6 +41,11 @@ z-index: 1;
 
 
 }
+
+
+
+
+
 
 .main-header .logo {
 z-index: 1;
@@ -155,10 +163,11 @@ background-color: rgb(112, 99, 124);
     display: flex;
     padding: 15px;
     flex-flow: row wrap;
-
+position: relative;
   }
   footer ul {
 display: flex;
+
 
 
 
@@ -170,23 +179,34 @@ margin:10px;
  }
 .fondo {
 
-  margin-left: 150px;
+position: absolute;
+right: 0;
 }
 
 
 
 
-/* LANDSCAPE PARA CEL
-@media all  (orientation: landscape) {
-  .main-header input {
-    height: 10vh;}
-
-}
-*/
 
 
 
 /* FIN DE FOOTER Y DISENO MOBILE */
+@media (orientation:LANDSCAPE) {
+
+  .main-header input {
+
+    height: 7vh;
+
+}
+
+.quien{
+  height: 45vh;
+}
+.main-header nav img {
+  margin-left: 80%;
+
+}
+.destacado .noticia {
+  height: 40vh;}}
 
 
   @media (min-width:860px) {
@@ -236,6 +256,32 @@ margin-left: 50%;
 /* FIN DE RESPONSIVE TABLET */
 
 
-@media  () {
+@media  (min-width:1050px) {
+    .main-header nav img{
+display:none;
+flex-basis:0;
+
+
 
 }
+
+.destacado .noticia {
+  flex-basis: 30%;
+
+}
+.main-header nav {
+position: relative;}
+.main-header nav ul {
+  display: block;
+   margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+
+}
+.main-header nav ul li {display: inline-block;margin-left: 40px;
+}
+.main-header nav ul li a{
+  color:rgb(68, 67, 67);
+}}
