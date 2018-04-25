@@ -1,0 +1,10 @@
+
+.caja {
+margin: 10px 30px;
+padding: 15px;
+background-color:#a7dbd8;
+}
+.caja li{
+  margin-bottom:40px;
+}
+.caja li ul li {margin:15px 10px;}
