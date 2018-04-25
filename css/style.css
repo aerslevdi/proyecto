@@ -168,8 +168,12 @@ position: relative;
   footer ul {
 display: flex;
 
+  }
 
 
+  footer ul img {
+width:40px;
+height: 40px;
 
   }
  footer ul li {
@@ -269,6 +273,8 @@ flex-basis:0;
   flex-basis: 30%;
 
 }
+.destacado .noticia img{
+  height: 40vh; }
 .main-header nav {
 position: relative;}
 .main-header nav ul {
