@@ -18,6 +18,27 @@
   .footer {
     display: flex;
   }
+  .form {
+    background-color: rgba(148, 22, 5, 0.5);
+    width: 960px;
+    border: 2px dotted skyblue;
+    padding: 30px 30px;
+  }
+  input:focus {
+    outline-color: green;
+  }
+  button:hover {
+    background: yellow;
+  }
+  .form a:link {
+    color: #00e5ff;
+  }
+  .form a:visited {
+    color: #311b92;
+  }
+  .form a:hover {
+    color: #ff6f00;
+  }
   @media /*tamaño tablet*/ {
 
   }
