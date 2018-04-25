@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
   .form {
@@ -377,3 +378,344 @@ position: relative;}
 .main-header nav ul li a{
   color:rgb(68, 67, 67);
 }}
+=======
+
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none
+  }
+  .nav {
+    display: flex;
+  }
+  .footer {
+    display: flex;
+  }
+  .form {
+    background-color: rgba(148, 22, 5, 0.5);
+    width: 960px;
+    border: 2px dotted skyblue;
+    padding: 30px 30px;
+  }
+  input:focus {
+    outline-color: green;
+  }
+  button:hover {
+    background: yellow;
+  }
+  .form a:link {
+    color: #00e5ff;
+  }
+  .form a:visited {
+    color: #311b92;
+  }
+  .form a:hover {
+    color: #ff6f00;
+  }
+  @media /*tamaño tablet*/ {
+
+  }
+@media /*Tamaño desktop*/ {
+
+}
+=======
+@charset "utf-8";
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  }
+html{ font-size: 14px;
+}
+  li {
+    list-style-type: none;
+  }
+  a:focus{
+    color:rgb(68, 67, 67);
+  }
+  a {
+    display: block;
+    text-decoration: none
+  }
+body{ background-color: #E0E4CC;}
+
+  /* FIN DE RESET Y COSAS PREDETERMINADAS  */
+
+.capa {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+    height: 35vh;
+    background-color: rgba(244, 170, 59, 0.52);
+}
+
+.main-header{
+z-index: 1;
+  height: 35vh;
+
+ background-image: url(../img/fondo.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+
+
+}
+
+
+
+
+
+
+.main-header .logo {
+z-index: 1;
+   align-self: flex-start;
+   flex-basis:50%;
+   order: 1;
+}
+.main-header img {
+width: 60px;
+
+height: 40px;
+}
+.main-header .busqueda {
+  border-radius: 50%;
+  width: 100%;
+
+   order: 3;
+}
+.main-header form {
+  width: 50%;
+}
+.main-header input {
+  border-radius:10px;
+  height: 4vh;
+  width: 100%;
+  margin-left: 50%;
+  padding: 2px;
+background-color: rgb(217, 217, 217);
+  font-size: 1rem;
+}
+.main-header .barra {
+   width: 100%;
+}
+.main-header nav {
+  order: 2;
+     flex-basis:50%;
+     display: flex;
+     flex-flow: row nowrap;
+
+}
+.main-header nav ul {
+  display: none;
+}
+
+.main-header nav img {
+  margin-left: 70%;
+  width: 35px;
+  height: 30px;
+}
+/* FIN DE HEADER */
+
+.destacado {
+
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.destacado .noticia {
+margin-top: 20px;
+flex-basis: 100%;
+height: 20vh;
+
+background-color: grey;
+  overflow:hidden;
+  position: relative;
+
+}
+
+.destacado .noticia img {
+  width: 100%;
+
+  height: 20vh;
+
+  border-spacing: 0;
+z-index: 1;
+}
+
+.destacado .noticia .abaj {
+  width: 100%;
+  height: 8vh;
+  padding: 3px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(187, 188, 190,0.5);
+  z-index: 2;
+}
+
+.destacado .noticia .abaj h2 {
+  font-size: 1.3rem;
+  color: rgb(17, 16, 15);
+font-weight: lighter;
+text-align: center;
+margin-top: 5px;
+}
+
+.sexto {
+  display: none;
+}
+
+/* FIN DESTACADO */
+
+.quien {
+width: 100%;
+height: 25vh;
+margin-top: 20px;
+background-color: rgb(112, 99, 124);
+}
+
+
+  footer {
+    margin-top: 20px;
+    border: 15px;
+    background-color: rgb(162, 173, 181);
+    display: flex;
+    padding: 15px;
+    flex-flow: row wrap;
+position: relative;
+  }
+  footer ul {
+display: flex;
+  }
+
+  footer ul img {
+width:40px;
+height: 40px;
+
+  }
+ footer ul li {
+flex-grow: 1;
+margin:10px;
+
+ }
+
+.fondo {
+
+position: absolute;
+right: 0;
+}
+
+
+
+
+
+
+
+/* FIN DE FOOTER Y DISENO MOBILE */
+@media (orientation:LANDSCAPE) {
+
+  .main-header input {
+
+    height: 7vh;
+
+}
+
+.quien{
+  height: 45vh;
+}
+.main-header nav img {
+  margin-left: 80%;
+
+}
+.destacado .noticia {
+  height: 40vh;}}
+
+
+  @media (min-width:860px) {
+
+    .destacado {
+      padding: 20px;
+
+    }
+   .destacado .noticia {
+     flex-basis: 45%;
+     margin: 15px 15px ;
+   }
+   .sexto{display:block;
+   }
+
+   .capa{
+     padding: 20px;
+   }
+   .main-header .busqueda{
+     width: 100%;
+     margin-left: 0;
+   }
+   .main-header .barra {
+     width: 100%;
+   }
+.main-header form {width: 50%
+
+}
+.main-header input {
+  height: 4vh;
+margin-left: 50%;
+   width: 100%;
+  }
+  .main-header .logo img{
+    width: 110px;
+    height: 70px;
+  }
+  .main-header nav img {
+    margin-left: 85%;
+
+    width: 65px;
+    height: 65px
+
+}
+
+
+/* FIN DE RESPONSIVE TABLET */
+
+
+@media  (min-width:1050px) {
+    .main-header nav img{
+display:none;
+flex-basis:0;
+
+
+
+}
+
+.destacado .noticia {
+  flex-basis: 30%;
+
+}
+.main-header nav {
+position: relative;}
+.main-header nav ul {
+  display: block;
+   margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+
+}
+.main-header nav ul li {display: inline-block;margin-left: 40px;
+}
+.main-header nav ul li a{
+  color:rgb(68, 67, 67);
+}}
+>>>>>>> 93eab8409acaabf04a42f1bbd571afa8587d5314
