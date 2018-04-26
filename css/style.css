@@ -1,43 +1,6 @@
 
 
-  .form {
-    margin-top: 5px;
 
- min-width: 400px;
-
-    padding: 20px 20px;
-  }
-  .form .registro {
-
-  }
-  .form .registro form{
-      background-color: rgba(190, 190, 190, 0.6);
-    width: 90%;
-
-    margin: 0 5%;
-  }
-  input:focus {
-    outline-color: green;
-  }
-  button:hover {
-    background: yellow;
-  }
-
-  .form a:visited {
-    color: black;
-  }
-  .form a:hover {
-    color: #ff6f00;
-  }
-  @media /*tamaño tablet*/ {
-
-  }
-@media /*Tamaño desktop*/ {
-
-}
-=======
-@charset "utf-8";
-/* CSS Document */
 * {
   margin: 0;
   padding: 0;
@@ -56,17 +19,88 @@ html{ font-size: 14px;
     display: block;
     text-decoration: none
   }
-body{ background-color: #E0E4CC;
+body{ background-color: white;
 }
 
   /* FIN DE RESET Y COSAS PREDETERMINADAS  */
+
+
+/* FORMULARIO HTML  */
+
+  .form {
+    margin-top: 5px;
+
+ min-width: 400px;
+
+    padding: 20px 20px;
+  }
+  .form  fieldset {
+ border: none;
+
+ padding: 10px;
+
+  }
+
+  .form .fa form{
+      background-color: rgba(190, 190, 190, 0.6);
+    width: 30%;
+    margin: 0 35%;
+        min-width: 228px;
+  }
+
+
+legend{
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: 'Anton', sans-serif;
+}
+
+
+  .form .registro form{
+      background-color: rgba(190, 190, 190, 0.6);
+    width: 70%;
+
+    margin: 0 15%;
+  }
+
+
+.login p {
+  font-size: 1.3rem;
+}
+
+.form button{
+
+  margin-top: 10px;
+  width: 70px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+  input:focus {
+    outline-color: green;
+  }
+  button:hover {
+    background: rgb(199, 199, 199);
+  }
+
+  .form a:visited {
+    color: black;
+  }
+  .form a:hover {
+    color: #ff6f00;
+  }
+
+
+
+/* FIN DE FORMULARIO HTML  */
+
 
 .capa {
   min-width: 385px;
   display: flex;
   flex-flow: row wrap;
   padding: 10px;
-    height: 33vh;
+    height: 35vh;
     background-color: rgba(244, 170, 59, 0.52);
 
 }
@@ -154,6 +188,7 @@ width: 100%;
 background-color: grey;
   overflow:hidden;
   position: relative;
+  box-shadow: 7px -4px 42px -5px rgba(0,0,0,0.75);
 
 }
 
@@ -234,7 +269,7 @@ height: 40px;
 }
   footer {
 
-  min-width: 434px;
+  min-width: 464px;
     margin-top: 20px;
     border: 15px;
     background-color: rgb(162, 173, 181);
@@ -255,13 +290,27 @@ flex-grow: 1;
 margin:10px;
 
  }
+/* PREGUNTAS HTML */
+
+.caja {
+margin: 10%;
+width: 80%;
+padding: 15px;
+background-color:rgba(145, 145, 145, 0.2);
+min-width: 375px;
+}
+.caja li{
+  margin-bottom:40px;
+}
+.caja li ul li {margin:15px 10px;}
 
 
+.pregunta-fondo{
+  background-image: url(../img/f.jpg);
+  background-repeat: repeat;
+}
 
-
-
-
-
+/* FIN PREGUNTAS HTML */
 
 /* FIN DE FOOTER Y DISENO MOBILE */
 @media (orientation:LANDSCAPE) {
@@ -354,7 +403,7 @@ flex-basis:0;
   height: 300px;
 }
 .capa {
-  height: 260px;
+  height: 300px;
 }
 
 .destacado .noticia {
