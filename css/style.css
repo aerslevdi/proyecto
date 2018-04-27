@@ -115,7 +115,6 @@ box-shadow: 4px 4px 25px 0px rgba(0,0,0,0.62);
   flex-flow: row wrap;
   padding: 10px;
     height: 35vh;
-    background-color: rgba(244, 170, 59, 0.22);
 
 }
 
@@ -209,7 +208,7 @@ font-family: 'Philosopher', sans-serif;
 
 .destacado .noticia {
 margin-top: 20px;
-border-radius: 20px;
+
 flex-basis: 100%;
 height: 25vh;
 width: 100%;
@@ -266,7 +265,7 @@ margin-top: 5px;
   display: flex;
   flex-flow: row nowrap;
 width: 100%;
-height: 25vh;
+height: 26vh;
 margin-top: 20px;
 background-repeat: no-repeat;
 background-size: cover;
@@ -284,17 +283,28 @@ background-position: center center;
 
 }
 .quien .lado2 {
-flex-basis: 75%;
+flex-basis: 80%;
   overflow: hidden;
   padding: 10px;
   height: 25vh;
   position: relative;
 
 }
-.quien .lado2 a{ position: absolute;right: 30px;bottom: 30px;}
+.quien .lado2 a{
+   position: absolute;right: 30px;bottom: 30px;}
 
 .quien .lado1 p {margin-top: 20px;}
 
+.quien h2 {
+  margin: 30px 20px;
+  font-size: 3rem;
+  width: 14%;
+}
+.quien p {
+  margin: 40px 20px;
+  font-size: 2rem;
+  width: 90%;
+}
 
 
 footer ul img {
@@ -363,11 +373,11 @@ min-width: 375px;
 }
 
 .quien{
-  height: 45vh;
+  height: 25vh;
 }
 .quien .lado1 {
 
-  height: 45vh;
+  height: 25vh;
 
 
 }
@@ -379,7 +389,8 @@ min-width: 375px;
   height: 40vh;}
 
   .destacado .noticia img{
-    height: 40vh;}
+    height: 40vh;
+  border-radius: 20px;}
 
 }
 
@@ -393,6 +404,7 @@ min-width: 375px;
    .destacado .noticia {
      flex-basis: 45%;
      margin: 15px 15px ;
+     border-radius: 20px;
    }
    .sexto{display:block;
    }
