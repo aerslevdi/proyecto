@@ -24,10 +24,27 @@ html{ font-size: 14px;
     display: block;
     text-decoration: none
   }
-body{ background-color: black;
+body{ background-color: #D9CFC1;
 }
 
   /* FIN DE RESET Y COSAS PREDETERMINADAS  */
+
+.menu {
+  background-color:#80A1C1;min-width: 464px;
+
+
+}
+
+
+
+.menu li a {
+  font-family: font-family: 'Roboto Mono', monospace;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.menu li a:hover {
+  background-color:#6787aa;
+}
 
 
 /* FORMULARIO HTML  */
@@ -48,13 +65,16 @@ body{ background-color: black;
 
 .form  fieldset {
     border: none;
+      box-shadow: 4px 4px 25px 0px rgba(0,0,0,0.62);
     padding: 10px;
-    box-shadow: 0px 0px 26px -5px rgba(133,124,133,1);
-    background-color: rgba(28, 26, 26, 1);
+
+    background-color: #394b5c;
     text-align: center;
   }
 
-
+label{
+  color: white;
+}
   .form .fa form{
     width: 30%;
     margin: 0 35%;
@@ -70,7 +90,7 @@ legend{
   font-size: 2rem;
   box-shadow: 0px -5px 25px -7px rgba(133,124,133,1);
   border-radius: 5px;
-  background-color: rgba(28, 26, 26, 1);
+  background-color: #BA3F1D;
   margin-bottom: 10px;
   font-family: 'Anton', sans-serif;
   color: rgb(193, 193, 193);
@@ -79,7 +99,7 @@ legend{
 
   .form .registro form{
     width: 70%;
-    box-shadow: 4px 4px 25px 0px rgba(0,0,0,0.62);
+
     margin: 0 15%;
   }
 
@@ -93,20 +113,15 @@ legend{
 
 
 .form button {
-	box-shadow: 2px -2px 0px 1px #cf70b3;
-	background:linear-gradient(to bottom, #fa57ae 5%, #ef027d 100%);
-	background-color:#fa57ae;
+	background-color:#BA3F1D;;
 	border-radius:5px;
-	border:1px solid #d126a3;
+
 	color:#e3c1e3;
 	font-family: 'Tajawal', sans-serif;
 	padding:8px 19px;
-	text-shadow:0px 1px 0px #c70067;
+
 }
-.form button:hover {
-	background:linear-gradient(to bottom, #ef027d 5%, #fa57ae 100%);
-	background-color:#ef027d;
-}
+
 .form button:active {
 	position:relative;
 	top:1px;
@@ -119,13 +134,13 @@ legend{
   text-align: center;
 }
   input:focus {
-    outline-color: rgba(220, 246, 10, 0.77);
+    outline-color: none;;
   }
    .form a:visited {
     color: black;
   }
   .form a:hover {
-    color: #ff6f00;
+    color: #BA3F1D;
   }
   input[type=text], select, input[type=email], input[type=password] {
     width: 100%;
@@ -136,9 +151,9 @@ legend{
     padding-bottom: 10px;
     border: none;
     border-radius: 5px;
-    color: rgb(221, 254, 16);
+    color: black;
     text-overflow: clip;
-    background: rgba(71,65,65,1);
+    background: white;
     box-shadow: 5px 4px 2px 0 rgba(0,0,0,0.2) inset;
     transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   }
@@ -171,6 +186,7 @@ legend{
     background-color: #e9fd00;
   }
 
+
   .button-box-login {
     text-align: center;
   }
@@ -181,7 +197,7 @@ legend{
 
 /*Inicio eleccion de registro*/
 .selection {
-  background-color:rgb(28, 26, 26);
+  background-color:#394b5c;
   border-color:rgb(140, 132, 132)none 0px;
   box-shadow:rgb(133, 124, 133) 0px 0px 26px -5px;
   color:rgb(140, 132, 132);
@@ -195,22 +211,19 @@ legend{
   margin-right: auto;
 }
 .selection li {
-  box-shadow: 2px -2px 0px 1px #cf70b3;
-	background:linear-gradient(to bottom, #fa57ae 5%, #ef027d 100%);
-	background-color:#fa57ae;
+
+	background-color:#BA3F1D;;
 	border-radius:5px;
-	border:1px solid #d126a3;
+
 	color:#e3c1e3;
 	font-family: 'Tajawal', sans-serif;
 	padding:8px 19px;
-	text-shadow:0px 1px 0px #c70067;
+
   margin-left: auto;
   margin-right: auto;
   width: 250px;
 }
-.registro-index {
 
-}
 /*Fin de elección de registro*/
 
 
@@ -281,12 +294,12 @@ legend{
   padding: 5px;
   margin-top: 10px;
   flex-basis: 100%;
-  background-color:  #ffd700;
+  background-color:  #80A1C1;
 }
 
 .trabajo h2 {
-  color:white;
-  font-family: 'Philosopher', sans-serif;
+  color:black;
+  font-family: font-family: 'Roboto Mono', monospace;
 }
 
 .destacado {
@@ -343,6 +356,8 @@ legend{
 
 
 .quien {
+
+
   min-width: 464px;
   display: flex;
   flex-flow: row nowrap;
@@ -361,12 +376,34 @@ legend{
   height: 25vh;
   background-color: rgba(173, 176, 174, 0.37);
 }
+.quien .lado1 h2{
+    font-size: 2rem;
+  font-family: 'Cabin', sans-serif;
+
+}
+.quien  p{
+  font-size: 3.1rem;
+  font-family: 'Cabin', sans-serif;
+
+    margin: 40px 20px;
+    font-size: 1.7rem;
+    width: 90%;
+
+}
+.quien  h2{
+    font-size: 2rem;
+  font-family: 'Cabin', sans-serif;
+
+}
 .quien .lado2 {
   flex-basis: 80%;
   overflow: hidden;
   padding: 10px;
   height: 25vh;
   position: relative;
+}
+.quien .lado2 p {
+  font-size: 1.7rem;  font-family: 'Cabin', sans-serif;
 }
 .quien .lado2 a{
    position: absolute;right: 30px;bottom: 30px;
@@ -381,11 +418,7 @@ legend{
   font-size: 3rem;
   width: 14%;
 }
-.quien p {
-  margin: 40px 20px;
-  font-size: 2rem;
-  width: 90%;
-}
+
 
 
 footer ul img {
@@ -393,7 +426,7 @@ footer ul img {
   height: 40px;
 }
   footer {
-    background-color:  #ffd700;
+    background-color: #80A1C1;
     min-width: 464px;
     margin-top: 20px;
     border: 15px;
@@ -423,7 +456,7 @@ footer ul img {
   margin: 10%;
   width: 80%;
   padding: 15px;
-  background-color:rgba(145, 145, 145, 0.2);
+  background-color:rgba(103, 135, 170, 0.6);
   min-width: 375px;
 }
 .caja li{
@@ -432,6 +465,15 @@ footer ul img {
 .caja li ul li {
   margin:15px 10px;
 }
+.caja li h2 {color: #BA3F1D; text-align: center;font-size: 1.8rem;
+margin-bottom: 10px;}
+.caja li p {
+  color: black;font-size: 1.5rem;
+  margin: 0 40px;
+}
+
+
+
 /* FIN PREGUNTAS HTML */
 
 /* FIN DE FOOTER Y DISENO MOBILE */
@@ -514,6 +556,11 @@ footer ul img {
 
 
 @media  (min-width:1050px) {
+  .menu li {display: inline-block;
+  width: 24.7%;
+
+  }
+
   .main-header nav img{
       display:none;
       flex-basis:0;
@@ -557,7 +604,7 @@ footer ul img {
    border: none;
    padding: 10px;
    box-shadow: 0px 0px 26px -5px rgba(133,124,133,1);
-   background-color: rgba(28, 26, 26, 1);
+
    text-align: center;
  }
 }
