@@ -8,54 +8,49 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
   <body class="pregunta-fondo">
-          <header class="main-header">
+        <header class="main-header">
            <div class="capa">
             <div class="logo">
               <a href="index.html"><img src="img/empa.png" alt="logo"></a>
             </div>
-
             <nav class="nav">
               <img src="img/hamb.png" alt="hmb">    <ul>
                 <li><a href="login.html"><h4>Iniciar</h4></a></li>
                 <li><a href="register.html"><h4>Registrarse</h4></a></li>
-
               </ul>
             </nav>
-
-
           <section class="busqueda">
             <div class="barra">
               <form class="search-form " action="" method="">
                 <input type="text" name="" value="" placeholder="Buscar">
-
               </form>
             </div>
           </section>
-
         </div>
-
-          </header>
+      </header>
     <section class="form">
       <div class="fa">
-      <form  action="/action_page.php" method="post">
-        <fieldset class="login">
-          <legend>Iniciar sesion</legend>
-          <p>
-            <label>Usuario</label><br>
-            <input type="text" name="usuario"required>
-          </p>
-          <p>
-            <label>Contraseña</label><br>
-            <input type="password" name="contraseña"required>
+        <form  action="/action_page.php" method="post">
+          <fieldset class="login">
+            <legend>Iniciar sesion</legend>
+            <p>
+              <label>Usuario</label><br>
+              <input type="text" name="usuario"required>
+            </p>
+            <p>
+              <label>Contraseña</label><br>
+              <input type="password" name="contraseña"required>
           </p>
           <p>
             <label>Recordarme</label>
             <input type="checkbox" name="recordar" id="recordar" value="recordar">
           </p>
-          <button type="submit" name="button">Enviar</button>
-          <button type="reset" name="button">Borrar</button>
           <a href="#">Olvidé mi contraseña</a>
-              <a href="#">No tenes cuenta ?</a>
+          <div class="button-box-login">
+            <button type="submit" name="button">Enviar</button>
+            <button type="reset" name="button">Borrar</button>
+          </div>
+          <a href="#">¿No tenes cuenta? Registrate</a>
         </fieldset>
       </form>
       </div>
