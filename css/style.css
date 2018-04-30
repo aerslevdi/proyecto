@@ -27,8 +27,10 @@ html{ font-size: 14px;
 body{ background-color: #D9CFC1;
 }
 
+
   /* FIN DE RESET Y COSAS PREDETERMINADAS  */
 
+/* MENU DESKTOP */
 .menu {
   background-color:#80A1C1;min-width: 464px;
   display: none;
@@ -37,12 +39,20 @@ body{ background-color: #D9CFC1;
   font-family: font-family: 'Roboto Mono', monospace;
   font-size: 1.3rem;
   text-align: center;
+
+
+}
+.menu li {
+  display: inline-block;
+  width: 24.7%;
 }
 .menu li a:hover {
   background-color:#6787aa;
 }
 
-/* FORMULARIO HTML  */
+/* FIN DESKTOP*/
+
+/* FORMULARIO REGISTRO LOGIN HTML  */
 
   .form {
     margin-top: 5px;
@@ -103,7 +113,7 @@ legend{
   font-size: 1.3rem;
 }
 .form a {
-  color:#e9fd00;
+  color:black;
 }
 
 
@@ -186,9 +196,8 @@ legend{
     text-align: center;
   }
 
+/* FIN DE FORMULARIO REGISTRO LOGIN HTML  */
 
-
-/* FIN DE FORMULARIO HTML  */
 
 /*Inicio eleccion de registro*/
 .selection {
@@ -221,6 +230,7 @@ legend{
 
 /*Fin de elección de registro*/
 
+/* HEADERR */
 
 .capa {
   min-width: 385px;
@@ -289,14 +299,16 @@ legend{
   padding: 5px;
   margin-top: 10px;
   flex-basis: 100%;
-  background-color:  #80A1C1;
+  background-color:  rgba(254, 32, 0, 0.79);
 }
+
 
 .trabajo h2 {
   color:black;
   font-family: font-family: 'Roboto Mono', monospace;
 }
 
+/* DESTACADOS  */
 .destacado {
   min-width: 464px;
   display: flex;
@@ -349,7 +361,7 @@ legend{
 
 /* FIN DESTACADO */
 
-
+/* CARRUSEL */
 .quien {
 
 
@@ -362,7 +374,7 @@ legend{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image:url(../img/log.jpg);
+  background-image:url(../img/fondo1.png);
   overflow: hidden;
 }
 .quien .lado1 {
@@ -372,14 +384,15 @@ legend{
   background-color: rgba(173, 176, 174, 0.37);
 }
 .quien .lado1 h2{
-    font-size: 2rem;
-  font-family: 'Cabin', sans-serif;
+    font-size: 1.5rem;
+    font-family: "Open Sans",sans-serif;
+
 
 }
 .quien  p{
   font-size: 3.1rem;
   font-family: 'Cabin', sans-serif;
-
+  background-color:rgba(204, 204, 204, 0.72);
     margin: 40px 20px;
     font-size: 1.7rem;
     width: 90%;
@@ -393,16 +406,15 @@ legend{
 .quien .lado2 {
   flex-basis: 80%;
   overflow: hidden;
-  padding: 10px;
-  height: 25vh;
+
+
   position: relative;
 }
 .quien .lado2 p {
-  font-size: 1.7rem;  font-family: 'Cabin', sans-serif;
+  font-size: 1rem;  font-family: 'Cabin', sans-serif;
+  background-color:rgba(204, 204, 204, 0.72);
 }
-.quien .lado2 a{
-   position: absolute;right: 30px;bottom: 30px;
- }
+
 
 .quien .lado1 p {
   margin-top: 20px;
@@ -414,7 +426,7 @@ legend{
   width: 14%;
 }
 
-
+/* FIN CARRUSEL */
 
 footer ul img {
   width:40px;
@@ -445,8 +457,9 @@ footer ul img {
   font-weight: bolder;
   font-family: 'Exo 2', sans-serif;
  }
-/* PREGUNTAS HTML */
+/* FIN FOOTER HTML */
 
+/* FAQ */
 .caja {
   margin: 10%;
   width: 80%;
@@ -469,9 +482,11 @@ margin-bottom: 10px;}
 
 
 
-/* FIN PREGUNTAS HTML */
+/* FIN FAQ HTML */
 
-/* FIN DE FOOTER Y DISENO MOBILE */
+/* FIN DE  DISENO MOBILE */
+
+
 @media (orientation:LANDSCAPE) {
   .main-header input {
     height: 7vh;
@@ -496,8 +511,15 @@ margin-bottom: 10px;}
 }
 }
 
+/* FIN ORIENTACION HORIZONTAL */
 
   @media (min-width:860px) {
+.quien .lado1 h2 {
+  font-size: 3rem;
+}
+    .quien .lado2 p {
+      font-size: 1.5rem;}
+
     .destacado {
       padding: 20px;
     }
@@ -554,10 +576,7 @@ margin-bottom: 10px;}
   .menu {
     display: block;
   }
-  .menu li {
-    display: inline-block;
-    width: 24.7%;
-  }
+
   .main-header nav img{
       display:none;
       flex-basis:0;
@@ -604,4 +623,4 @@ margin-bottom: 10px;}
 
    text-align: center;
  }
-}
+}/* FIN RESPONSIVE DESKTOP */
