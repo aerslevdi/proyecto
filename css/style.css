@@ -29,26 +29,24 @@ body{ background-color: #D9CFC1;
 
 
   /* FIN DE RESET Y COSAS PREDETERMINADAS  */
-
-/* MENU DESKTOP */
-.menu {
-  background-color:#80A1C1;min-width: 464px;
-  display: none;
-}
-.menu li a {
-  font-family: font-family: 'Roboto Mono', monospace;
-  font-size: 1.3rem;
-  text-align: center;
+  .menu {
+    background-color:#80A1C1;min-width: 464px;
+    display: none;font-size: 0;
+  }
+  .menu li a {
+    font-family: font-family: 'Roboto Mono', monospace;
+    font-size: 1.3rem;
+    text-align: center;
 
 
-}
-.menu li {
-  display: inline-block;
-  width: 24.7%;
-}
-.menu li a:hover {
-  background-color:#6787aa;
-}
+  }
+  .menu li {
+    display: inline-block;
+    width: 25%;
+  }
+  .menu li a:hover {
+    background-color:#6787aa;
+  }
 
 /* FIN DESKTOP*/
 
