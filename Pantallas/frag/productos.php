@@ -1,8 +1,9 @@
+<h4> Trabajos Destacados</h4>
 <div class="productos">
 
   <div class="producto">
    <div class="foto">
-      <a href=""><img src="img/dis.jpg" alt=""></a>
+      <a href=""><img src="../img/dis.jpg" alt=""></a>
    </div>
    <div class="descripcion">
       <p class="titu">Diseño</p>
@@ -12,7 +13,7 @@
 
   <div class="producto">
    <div class="foto">
-      <a href=""><img src="img/abog.jpg" alt=""></a>
+      <a href=""><img src="../img/abog.jpg" alt=""></a>
    </div>
    <div class="descripcion">
       <p class="titu">Judicial</p>
@@ -22,7 +23,7 @@
 
   <div class="producto">
    <div class="foto">
-      <a href=""><img src="img/japan.jpg" alt=""></a>
+      <a href=""><img src="../img/japan.jpg" alt=""></a>
    </div>
    <div class="descripcion">
       <p class="titu">Arquictectura</p>
@@ -33,11 +34,33 @@
   <div class="producto">
    <div class="foto">
      <a href="">
-     <img src="img/med.jpg" alt=""></a>
+     <img src="../img/med.jpg" alt=""></a>
    </div>
    <div class="descripcion">
       <p class="titu">Medicina</p>
       <p>Servicios de salud para empresas </p>
+   </div>
+  </div>
+
+  <div class="producto desktop">
+   <div class="foto">
+     <a href="">
+     <img src="../img/moti.jpg" alt=""></a>
+   </div>
+   <div class="descripcion">
+      <p class="titu">Motivacion empresarial</p>
+      <p>Servicios de motivacion empresariales </p>
+   </div>
+  </div>
+
+  <div class="producto desktop">
+   <div class="foto">
+     <a href="">
+     <img src="../img/dh.jpg" alt=""></a>
+   </div>
+   <div class="descripcion">
+      <p class="titu">Capacitaciones DH</p>
+      <p>Servicios de capacitacion para empleados</p>
    </div>
   </div>
   <div class="vermas">

@@ -90,6 +90,9 @@ font-family: 'PT Sans', sans-serif;
    padding: 10px 0 ;
    margin: 0 2%;
 }
+h4{
+  margin: 5px;
+}
 .producto {
   flex-basis: 45%;
   margin: 5px 3px;
@@ -191,10 +194,7 @@ font-family: 'Quicksand', sans-serif;
   width: 14%;
 }
 
-footer ul img {
-  width:20px;
-  height: 20px;
-}
+
   footer {
     background-color: #1f753c;
 
@@ -206,23 +206,37 @@ footer ul img {
     flex-flow: row wrap;
     position: relative;
   }
-  footer ul {
+
+
+  footer .nave {
     display: flex;    flex-flow: row wrap;width: 100%;
   }
- footer ul li {
+ footer .nave li {
    flex-basis: 100%;
    margin:5px;
    font-family: 'Exo 2', sans-serif;
  }
- footer ul li a {
+ footer .nave li a {
   font-size: 1rem;
   text-align: center;
   color: black;
   font-weight: bolder;
   font-family: 'Exo 2', sans-serif;
  }
+ .centrado {
+width: 50%;
+margin: 0 25%;
+padding: 5%;
+ }
+ footer .centrado img{
+   width:30px;
+   height: 30px;
 
-
+ }
+.centrado .social{
+  display: inline-block;
+  margin: 0 5px;
+}
 
 
 
@@ -441,7 +455,12 @@ footer ul img {
 
 @media (min-width:850px){
 
-
+.quien .lado2 {
+  padding: 50px;
+}
+.quien .lado2 p{
+  font-size: 1.5rem;
+}
 
 .register-p {
 width: 50%;
@@ -496,6 +515,10 @@ text-align: left;
 .desktop{
   display: inline-block;
 
+}
+
+.producto .foto img {
+  height: 25vh;
 }
 .nav .opcion a{
 
