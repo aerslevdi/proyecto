@@ -1,35 +1,76 @@
+
+<?php
+require_once('funciones2.php');
+
+if ($_POST) {
+
+   $name=trim($_POST['name']);
+   echo $name ;
+   $empresa=trim($_POST['nameuser']);
+   $email=trim($_POST['email']);
+   $cuit=trim($_POST['cuit']);
+   $puesto=trim($_POST['puesto']);
+
+   $errores=validar($_POST);
+
+
+ }else {
+
+   $name=' ';
+   $empresa=' ';
+   $email=' ';
+   $cuit=' ';
+   $puesto=' ';
+ }
+
+
+
+
+
+ ?>
+
+
 <section class="form">
 
 <div class="registro">
-  <form class="registro" action="/action_page.php" method="post">
+  <form class="registro" action="" method="post">
     <fieldset>
-      <div class="publicidad">
 
-      </div>
       <legend>Registro</legend>
       <p class="register-p">
         <label>Nombre completo</label><br>
-        <input type="text" name="nombre-completo"required>
+        <input  <?php if (!empty($errores['name'])) {   ?>
+          class="rojo"<?php   } ?>
+           type="text" name="name"
+            value="<?=$name ?>
+             <?php if (empty($errores['name'])) {
+          $errores['name'];}
+          ?>
+       " required>
       </p>
       <p class="register-p">
         <label>Nombre de empresa</label><br>
-        <input type="text" name="nombre-empresa"required>
+        <input <?php if (!empty($errores['empresa'])) {   ?>
+          class="rojo"<?php   } ?> type="text" name="nameuser" value=" <?=$empresa ?> " required>
       </p>
       <p class="register-p">
         <label>E-Mail</label><br>
-        <input type="email" name="direccion-email" required>
+        <input  <?php if (!empty($errores['email'])) {   ?>
+          class="rojo"<?php   } ?> type="email" name="email" value="<?=$email ?> "  required>
       </p>
       <p class="register-p">
         <label>C.U.I.T.</label><br>
-        <input type="text" name="cuit"required>
+        <input <?php if (!empty($errores['cuit'])) {   ?>
+          class="rojo"<?php   } ?> type="text" name="cuit" value="<?=$cuit ?> " required>
       </p>
       <p class="register-p">
         <label>Puesto</label><br>
-        <input type="text" name="puesto"required>
+        <input  <?php if (!empty($errores['puesto'])) {   ?>
+          class="rojo"<?php   } ?> type="text" name="puesto" value="<?=$puesto ?> " required>
       </p>
       <p class="register-p">
         <label>Area de trabajo</label><br>
-        <select name="asunto">
+        <select name="asunto" >
           <option value="01">Administracion</option>
           <option value="02">Call center</option>
           <option value="03">Comercio exterior</option>
@@ -61,8 +102,8 @@
       </p>
       <p class="register-p">
         <label>¿Desea recibir noticias?</label><br>
-        <input type="radio" name="mailing" id="si" value="si"><label for="si">Si</label>
-        <input type="radio" name="mailing" id="no" value="no"><label for="no">No</label>
+        <input type="radio" name="mailing"  ><label for="si">Si</label>
+        <input type="radio" name="mailing"><label for="no">No</label>
       </p>
       <div class="button-box">
         <button type="submit" name="button">Enviar</button>

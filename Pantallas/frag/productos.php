@@ -38,7 +38,7 @@
    </div>
    <div class="descripcion">
       <p class="titu">Medicina</p>
-      <p>Servicios de salud para empresas </p>
+      <p>Servicios de salud y sanidad para empresas </p>
    </div>
   </div>
 
@@ -60,7 +60,7 @@
    </div>
    <div class="descripcion">
       <p class="titu">Capacitaciones DH</p>
-      <p>Servicios de capacitacion para empleados</p>
+      <p>Servicios de capacitacion personales y empresariales</p>
    </div>
   </div>
   <div class="vermas">

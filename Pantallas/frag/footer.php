@@ -7,6 +7,8 @@
 <div class="centrado">
 
 
+
+
         <a class="social" href="#">  <img src="../img/face.svg" alt="face.png"></a>
 
           <a class="social" href="#">  <img src="../img/instagram.svg" alt="instagram.svg"></a>

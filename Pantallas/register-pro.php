@@ -9,7 +9,7 @@
         <?php
       require_once('frag/header.php') ;
 
-require_once('frag/registerpro.php') ;
+require_once('frag/regp.php') ;
 
  require_once('frag/footer.php'); ?>
 
