@@ -7,9 +7,10 @@
   <body >
 
         <?php
+        require_once('frag/functions.php');
       require_once('frag/header.php') ;
 
-    require_once('frag/regi.php');
+    require_once('frag/regp.php');
 
 require_once('frag/footer.php') ;?>
 

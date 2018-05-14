@@ -1,3 +1,5 @@
+<?php
+
 $asunto = ['Administración', 'Call Center', 'Comercio Exterior', 'Comunicación',
  'Construcción','Diseño','Educación','Finanzas','Gastronomía','Gerencia','Ingeniería',
  'Legales','Logística','Marketing','Medicina','Minería','Oficios','Producción',
@@ -12,9 +14,9 @@ $puesto='';
 $estudios='';
 $direccion='';
 $telefono='';
-$universitario='';
-$terciario='';
-$tecnico='';
+$universitario='universitario';
+$terciario='terciario';
+$tecnico='tecnico';
 $terminos='';
 $contrasenia='';
 $contrasenia2='';
@@ -28,9 +30,7 @@ if ($_POST) {
   $direccion=$_POST['direccion'];
   $telefono=$_POST['telefono'];
   $matricula=$_POST['matricula'];
-  $universitario=$_POST['univeritario'];
-  $terciario=$_POST['terciario'];
-  $tecnico=$_POST['tecnico'];
+
 
   if(isset($_POST['terminos'])){
       $terminos=$_POST['terminos'];
