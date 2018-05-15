@@ -7,6 +7,7 @@
     <div class="lupa" >
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
+        <input type="search" name="search" value="">
       <img src="../img/search1.png" alt="">
     </div>
   </div>
