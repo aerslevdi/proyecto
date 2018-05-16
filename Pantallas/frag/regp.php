@@ -8,7 +8,7 @@
 
         <legend>Registro</legend>
             <div class="error">
-              <?php if(isset($error['no'])):
+              <?php if(!isset($error['no'])):
               foreach ($error as $value):?>
                 <p><?php
                 echo '*'.$value ; ?></p>
