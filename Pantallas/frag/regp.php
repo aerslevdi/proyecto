@@ -15,45 +15,45 @@
 
           <?php endforeach;endif; ?>
             </div>
-            <?php if (!isset($_GET['profesional'])):?>
+            <?php if (!isset($_GET['empresa'])):?><p class="register-p">
+              <label>Nombre completo</label><br>
+              <input type="text" name="nombreCompleto" value="<?php echo $user['nombreCompleto'] ?>" >
+            </p>
+            <?php else:  ?>
               <p class="register-p">
                 <label>Nombre de empresa</label><br>
                 <input type="text" name="nombreEmpresa" value="<?php echo $user['nombreEmpresa'] ?>">
-              </p>
-            <?php else:  ?>
-              <p class="register-p">
-                <label>Nombre completo</label><br>
-                <input type="text" name="nombreCompleto" value="<?php echo $user['nombreCompleto'] ?>" >
               </p>
             <?php endif; ?>
       <p class="register-p">
         <label>E-Mail</label><br>
         <input type="email" name="direccionEmail" value="<?php echo   $user['direccionEmail'] ?>">
       </p>
-      <?php if (!isset($_GET['profesional'])):?>
+      <?php if (!isset($_GET['empresa'])):?>
         <p class="register-p">
-          <label>Razón social</label><br>
-          <input type="text" name="razon" value="<?php echo $user['razon']?>">
+          <label>C.U.I.T.</label><br>
+          <input type="text" name="cuit" value="<?php echo   $user['cuit'] ?>">
         </p>
         <?php else:  ?>
-        <p class="register-p">
-        <label>C.U.I.T.</label><br>
-        <input type="text" name="cuit" value="<?php echo   $user['cuit'] ?>">
-        </p>
+          <p class="register-p">
+            <label>Razón social</label><br>
+            <input type="text" name="razon" value="<?php echo $user['razon']?>">
+          </p>
       <?php endif; ?>
-      <p class='register-p'>
-     <label for='number'>Teléfono de contacto</label>
+      <p class="register-p">
+     <label>Teléfono de contacto</label>
      <input type="tel"  name='telefono' id='phone' value="<?php echo   $user['telefono'] ?>">
    </p>
-
-   <p class="form-control">
-     <label for="direccion">Dirección de domicilio</label>
+   <p class="register-p">
+     <label>Dirección de domicilio</label>
      <input type="text" name="direccion" id="direccion" value="<?php echo   $user['direccion']?>">
    </p>
+   <?php if (isset($_GET['empresa'])):?>
       <p class="register-p">
         <label>Puesto</label><br>
         <input type="text" name="puesto" value="<?php echo   $user['puesto']?>">
       </p>
+    <?php endif; ?>
       <p class="register-p">
         <label for="area">Area de trabajo</label><br>
         <select class="option" name="asunto" value='<?php echo $asunto ?>'>
@@ -66,6 +66,7 @@
           <?php endforeach; ?>
         </select>
       </p>
+      <?php if (!isset($_GET['empresa'])):?>
       <p class="register-p">
         <label>Matricula</label><br>
         <input type="text" name="matricula" value="<?php echo $user['matricula'] ?>" >
@@ -76,6 +77,7 @@
         <input type="radio" name="estudios" value="terciario"><label for="terciario">Terciario completo</label>
         <input type="radio" name="estudios" value="tecnico"><label for="tecnico">Tecnicatura completa</label><br>
       </p>
+    <?php endif; ?>
       <p class="register-p">
         <label>Contraseña</label><br>
         <input type="password" name="contrasenia" value="">
