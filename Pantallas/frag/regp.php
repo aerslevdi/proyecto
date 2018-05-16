@@ -8,7 +8,7 @@
 
         <legend>Registro</legend>
             <div class="error">
-              <?php if(isset($error)):
+              <?php if(isset($error['no'])):
               foreach ($error as $value):?>
                 <p><?php
                 echo '*'.$value ; ?></p>
@@ -93,10 +93,10 @@
       </p>
     <?php endif; ?>
       <p class="register-p">
-        <input type="checkbox" name="mailing" id="mailing" value="<?php echo $noticias ?>"><label>¿Desea recibir noticias?</label>
+        <input type="checkbox" name="mailing" id="mailing" value=""><label>¿Desea recibir noticias?</label>
       </p>
       <p class="register-p">
-        <input type="checkbox" name="terminos" id="condiciones" value="<?php echo $acepto ?>"><label class="terminos">Acepto <a href="#"> terminos y condiciones</a></label>
+        <input type="checkbox" name="terminos" id="condiciones" value=""><label class="terminos">Acepto <a href="#">terminos y condiciones</a></label>
       </p>
       <div class="button-box">
         <button type="submit" name="button">Enviar</button>
