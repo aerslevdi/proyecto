@@ -362,6 +362,9 @@ font-family: 'Pontano Sans', sans-serif;
      box-shadow: 5px 4px 2px 0 rgba(0,0,0,0.2) inset;
      transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
    }
+   .terminos a {
+     display: inline-block;
+   }
    input[type=checkbox] {
      top: 2px;
      left: 0;
