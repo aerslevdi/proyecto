@@ -5,6 +5,6 @@
     <br>
     <li><a href="register.php" class="sbutton">Empresas</a></li>
     <br><br>
-    <li><a href="register.php" class="sbuttonp">Profesional</a></li>
+    <li><a href="register.php?profesional" class="sbuttonp">Profesional</a></li>
   </ul>
 </div>
