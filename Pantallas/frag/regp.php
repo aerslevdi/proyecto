@@ -41,7 +41,7 @@
           </p>
       <?php endif; ?>
       <p class="register-p">
-     <label>Teléfono de contacto</label>
+     <label>Teléfono de contacto</label><br>
      <input type="tel"  name='telefono' id='phone' value="<?php echo   $user['telefono'] ?>">
    </p>
    <p class="register-p">
@@ -86,10 +86,12 @@
         <label>Repetir contraseña</label><br>
         <input type="password" name="contrasenia2" value="" >
       </p>
+      <?php if (!isset($_GET['empresa'])):?>
       <p class="register-p">
         <label>Subir CV</label>
         <input type="file" name="archivo">
       </p>
+    <?php endif; ?>
       <p class="register-p">
         <input type="checkbox" name="mailing" id="mailing" value="<?php echo $telefono ?>"><label>¿Desea recibir noticias?</label>
       </p>
