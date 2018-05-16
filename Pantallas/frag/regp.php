@@ -41,15 +41,15 @@
         <input type="text" name="cuit" value="<?php echo   $user['cuit'] ?>">
         </p>
       <?php endif; ?>
-      <div class='register-p'>
+      <p class='register-p'>
      <label for='number'>Teléfono de contacto</label>
      <input type="tel"  name='telefono' id='phone' value="<?php echo   $user['telefono'] ?>">
-   </div>
+   </p>
 
-   <div class="form-control">
+   <p class="form-control">
      <label for="direccion">Dirección de domicilio</label>
      <input type="text" name="direccion" id="direccion" value="<?php echo   $user['direccion']?>">
-   </div>
+   </p>
       <p class="register-p">
         <label>Puesto</label><br>
         <input type="text" name="puesto" value="<?php echo   $user['puesto']?>">
