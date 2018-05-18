@@ -8,10 +8,9 @@
   <body >
 
         <?php
-      require_once('frag/header.php');
+        require_once('frag/header.php');
         require_once('frag/registro.php');
-
- require_once('frag/footer.php'); ?>
+        require_once('frag/footer.php'); ?>
 
 
   </body>

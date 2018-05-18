@@ -88,8 +88,8 @@
       </p>
       <?php if (!isset($_GET['empresa'])):?>
       <p class="register-p">
-        <label>Subir CV</label>
-        <input type="file" name="archivo">
+        <label>Foto perfil : </label>
+        <input type="file" name="perfil">
       </p>
     <?php endif; ?>
       <p class="register-p">

@@ -33,31 +33,29 @@ function traerTodos() {
   	}
 
     function existeEmpresa($empresa){
-
     		$todos = traerTodos();
-
     		foreach ($todos as $unUsuario) {
-
+          if(!empty($unUsuario['nombreEmpresa'])){
     			if ($unUsuario['nombreEmpresa'] == $empresa) {
     				return $unUsuario;
     			}
-    		}
+    		}}
     		return false;
     	}
 
 
 
 			function traerUltimoID(){
-					// me traigo todos los usuarios
+
 					$usuarios = traerTodos();
 					if (count($usuarios) == 0) {
 						return 1;
 					}
-					// En caso de que haya usuarios agarro el ultimo usuario
+
 					$elUltimo = array_pop($usuarios);
-					// Pregunto por le ID de ese ultimo usuario
+
 					$id = $elUltimo['id'];
-					// A ese ID le sumo 1, para asignarle el nuevo ID al usuario que se esta registrando
+
 					return $id + 1;
 				}
 
@@ -111,7 +109,9 @@ function validar ($user){
 }
 
 	if (!isset($_GET['empresa'])){
-
+		if(!isset($user['estudios'])){
+	    $error['estudio']='Ingrese estudios';
+	  }
   if ($user['nombreCompleto']=='') {
     $error['name']='Ingrese un nombre';
   }
@@ -141,9 +141,7 @@ function validar ($user){
   }
 
 
-  if(!isset($user['estudios'])){
-    $error['estudio']='Ingrese estudios';
-  }
+
 
   if(isset($error)){
 		  return $error;
