@@ -20,9 +20,9 @@ if ($_POST) {
   $error=validar($user);
 
 
-if(isset($error['no'])){
+if(empty($error)){
 
   guardarUsuario($user);
-
+  header('location:index.php');
 }
           }

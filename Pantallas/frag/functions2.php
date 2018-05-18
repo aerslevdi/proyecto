@@ -45,22 +45,42 @@ function traerTodos() {
     		return false;
     	}
 
+
+
+			function traerUltimoID(){
+					// me traigo todos los usuarios
+					$usuarios = traerTodos();
+					if (count($usuarios) == 0) {
+						return 1;
+					}
+					// En caso de que haya usuarios agarro el ultimo usuario
+					$elUltimo = array_pop($usuarios);
+					// Pregunto por le ID de ese ultimo usuario
+					$id = $elUltimo['id'];
+					// A ese ID le sumo 1, para asignarle el nuevo ID al usuario que se esta registrando
+					return $id + 1;
+				}
+
+
 function crearusu($dato){
 	if (isset($_GET['empresa'])){
       $user['nombreEmpresa']=trim($dato['nombreEmpresa']);
 		  $user['puesto']=trim($dato['puesto']);
 		  $user['razon']=trim($dato['razon']);
 }
-
+	if (!isset($_GET['empresa'])){
   $user['nombreCompleto']=trim($dato['nombreCompleto']);
+  $user['cuit']=trim($dato['cuit']);
+  $user['matricula']=trim($dato['matricula']); }
+
 
   $user['direccionEmail']=trim($dato['direccionEmail']);
-  $user['cuit']=trim($dato['cuit']);
 
 
+  $user['id']=traerUltimoID();
   $user['direccion']=trim($dato['direccion']);
   $user['telefono']=trim($dato['telefono']);
-  $user['matricula']=trim($dato['matricula']);
+
   $user['pass1']=trim($dato['contrasenia']);
   $user['pass2']=trim($dato['contrasenia2']);
   if(isset($dato['estudios'])){
@@ -72,8 +92,11 @@ function crearusu($dato){
 return $user;
 }
 
-function validar ($user){
 
+
+
+function validar ($user){
+ $error=[];
 	if (isset($_GET['empresa'])){
 		if($user['nombreEmpresa'] ==''){
 			$error['empresa']='Ingrese una empresa';
@@ -84,25 +107,27 @@ function validar ($user){
 	    $error['puesto']='Ingrese un puesto';
 	  }
 
-		
+
 }
 
-
+	if (!isset($_GET['empresa'])){
 
   if ($user['nombreCompleto']=='') {
     $error['name']='Ingrese un nombre';
   }
-
-
+	if($user['cuit']== ''){
+    $error['cuit']='Ingrese un cuit';
+  }
+	if($user ['matricula']== ''){
+    $error['matricula']='Ingrese una matricula';
+  }}
 
   if ($user['direccionEmail']== '' ||  ! filter_var($user['direccionEmail'], FILTER_VALIDATE_EMAIL)) {
     $error['email']='Ingrese un mail valido';
   }elseif($r=existeEmail($user['direccionEmail'])){
         $error['email']='Email ya existe';
   }
-  if($user['cuit']== ''){
-    $error['cuit']='Ingrese un cuit';
-  }
+
 
   if($user['direccion']== ''){
     $error['direccion']='Ingrese un direccion';
@@ -110,9 +135,7 @@ function validar ($user){
   if($user['telefono']== ''){
     $error['telefono']='Ingrese un telefono';
   }
-  if($user ['matricula']== ''){
-    $error['matricula']='Ingrese una matricula';
-  }
+
   if($user['pass1']== '' || $user['pass2']== ''){
     $error['pass']='Ingrese una contrasenia';
   }
@@ -121,9 +144,10 @@ function validar ($user){
   if(!isset($user['estudios'])){
     $error['estudio']='Ingrese estudios';
   }
-if(!isset($error)){
-  $error['no']='1';
-}
+
+  if(isset($error)){
+		  return $error;
+	}
 
   return $error;
 }
