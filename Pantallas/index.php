@@ -4,7 +4,7 @@
 
      <?php require_once('frag/head.php') ?>
 
-    <title>HeaderNuevo</title>
+    <title>: : Inicio : : </title>
   </head>
   <body>
     <?php

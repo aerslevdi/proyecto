@@ -556,6 +556,8 @@ footer .nave li {
       margin-top: 10px;
 
    }
+   .menu .lupa img {
+    display: none;}
    .menu .lupa input {
  display: inline-block;
  width: 100px;}
