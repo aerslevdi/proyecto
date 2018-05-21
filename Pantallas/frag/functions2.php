@@ -100,14 +100,7 @@ return $user;
 
 function validar ($user){
  $error=[];
- if(isset($_FILES)){
-$ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
-	 if ($ext!='') {
-		 if($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
 
-			 $error['avatar'] = "Formatos admitidos: JPG o PNG";
-	}
-}}
 
 
 
@@ -129,6 +122,14 @@ $ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
 		if(!isset($user['estudios'])){
 	    $error['estudio']='Ingrese estudios';
 	  }
+		if(isset($_FILES)){
+	 $ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
+			if ($ext!='') {
+				if($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+
+					$error['avatar'] = "Formatos admitidos: JPG o PNG";
+		 }
+	 }}
   if ($user['nombreCompleto']=='') {
     $error['name']='Ingrese un nombre';
   }
@@ -189,6 +190,7 @@ function guardarUsuario($usu){
 $usu=json_encode($usu);
 
 file_put_contents('../datos/dato.json',  $usu .PHP_EOL, FILE_APPEND);
-$ok=guardarImg();
+if (!isset($_GET['empresa'])){
+$ok=guardarImg();}
 return $usu;
 }
