@@ -101,11 +101,14 @@ return $user;
 function validar ($user){
  $error=[];
  if(isset($_FILES)){
-	 $ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
-	 if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-		 
-		 $error['avatar'] = "Formatos admitidos: JPG o PNG";
+$ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
+	 if ($ext!='') {
+		 if($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+
+			 $error['avatar'] = "Formatos admitidos: JPG o PNG";
+	}
 }}
+
 
 
 
@@ -168,10 +171,24 @@ function validar ($user){
   return $error;
 }
 
+function guardarIMg(){
 
+
+		$nombreArchivo = $_FILES['perfil']['name'];
+
+		$ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
+
+		$archivoFisico = $_FILES['perfil']['tmp_name'];
+		$dondeEstoyParado = dirname(__FILE__);
+			$rutaFinalConNombre = $dondeEstoyParado . '../../img/' . $_POST['direccionEmail'] . '.' . $ext;
+
+			move_uploaded_file($archivoFisico, $rutaFinalConNombre);
+			return true;
+}
 function guardarUsuario($usu){
 $usu=json_encode($usu);
 
 file_put_contents('../datos/dato.json',  $usu .PHP_EOL, FILE_APPEND);
+$ok=guardarImg();
 return $usu;
 }
