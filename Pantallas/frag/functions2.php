@@ -58,9 +58,17 @@ function traerTodos() {
 
 					return $id + 1;
 				}
+function validarFoto(){
+		$ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
+		if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+			return $errores['avatar'] = "Formatos admitidos: JPG o PNG";
+				}
 
+}
 
 function crearusu($dato){
+
+
 	if (isset($_GET['empresa'])){
       $user['nombreEmpresa']=trim($dato['nombreEmpresa']);
 		  $user['puesto']=trim($dato['puesto']);
@@ -79,14 +87,19 @@ function crearusu($dato){
   $user['direccion']=trim($dato['direccion']);
   $user['telefono']=trim($dato['telefono']);
 
-  $user['pass1']=trim($dato['contrasenia']);
-  $user['pass2']=trim($dato['contrasenia2']);
+  $user['pass1']=password_hash($dato['contrasenia'], PASSWORD_DEFAULT);
+
   if(isset($dato['estudios'])){
   $user['estudios']=trim($dato['estudios']);
 }
-  if(isset($dato['terminos'])){
-      $user['terminos']=$dato['terminos'];
-        }
+
+				if(isset($_FILES)){
+					$errores=validarFoto();
+				 if(!isset($errores['avatar']))
+					 $user['foto']='img/' . $dato['direccionEmail'] . '.' . pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION);
+
+
+				}
 return $user;
 }
 
@@ -136,11 +149,15 @@ function validar ($user){
     $error['telefono']='Ingrese un telefono';
   }
 
-  if($user['pass1']== '' || $user['pass2']== ''){
+  if($user['pass1']== '' || $_POST['contrasenia2']== ''){
     $error['pass']='Ingrese una contrasenia';
-  }
+  }elseif(! password_verify($_POST['contrasenia2'],$user['pass1'])){
+	    $error['pass']='Las contrasenias no coinciden';
+	  }
 
-
+		if(!isset($_POST['terminos'])){
+	    $error['terminos']='Acepte los terminos y condiciones';
+	  }
 
 
   if(isset($error)){

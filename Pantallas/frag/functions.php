@@ -23,6 +23,7 @@ if ($_POST) {
 if(empty($error)){
 
   guardarUsuario($user);
+  var_dump($user);
   header('location:index.php');
 }
           }

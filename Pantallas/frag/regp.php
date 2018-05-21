@@ -3,7 +3,7 @@
 
 <section class="form">
   <div class="registro">
-    <form class="registro"  method="post">
+    <form class="registro" enctype="multipart/form-data"  method="post">
       <fieldset>
 
         <legend>Registro</legend>
