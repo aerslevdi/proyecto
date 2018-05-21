@@ -89,7 +89,7 @@ if (isset($_COOKIE['id'])) {
     <?php endif; ?>
       <p class="register-p">
         <label>Contraseña</label><br>
-        <input type="password" name="contrasenia" value="">
+        <input type="password" name="contrasenia" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos 8 caracteres ,un numero ,mayuscula,minuscula">
       </p>
       <p class="register-p">
         <label>Repetir contraseña</label><br>
