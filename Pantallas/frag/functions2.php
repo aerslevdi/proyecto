@@ -58,13 +58,7 @@ function traerTodos() {
 
 					return $id + 1;
 				}
-function validarFoto(){
-		$ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
-		if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-			return $errores['avatar'] = "Formatos admitidos: JPG o PNG";
-				}
 
-}
 
 function crearusu($dato){
 
@@ -93,9 +87,7 @@ function crearusu($dato){
   $user['estudios']=trim($dato['estudios']);
 }
 
-				if(isset($_FILES)){
-					$errores=validarFoto();
-				 if(!isset($errores['avatar']))
+				 if(isset($_FILES['perfil'])){
 					 $user['foto']='img/' . $dato['direccionEmail'] . '.' . pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION);
 
 
@@ -108,6 +100,15 @@ return $user;
 
 function validar ($user){
  $error=[];
+ if(isset($_FILES)){
+	 $ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
+	 if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+		 
+		 $error['avatar'] = "Formatos admitidos: JPG o PNG";
+}}
+
+
+
 	if (isset($_GET['empresa'])){
 		if($user['nombreEmpresa'] ==''){
 			$error['empresa']='Ingrese una empresa';
@@ -172,5 +173,5 @@ function guardarUsuario($usu){
 $usu=json_encode($usu);
 
 file_put_contents('../datos/dato.json',  $usu .PHP_EOL, FILE_APPEND);
-
+return $usu;
 }

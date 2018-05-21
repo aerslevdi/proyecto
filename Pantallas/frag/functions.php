@@ -18,12 +18,11 @@ $user['estudios']='';
 if ($_POST) {
   $user=crearUsu($_POST);
   $error=validar($user);
-
+  var_dump($user);
 
 if(empty($error)){
 
   guardarUsuario($user);
-  var_dump($user);
   header('location:index.php');
 }
           }
