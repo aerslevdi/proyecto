@@ -7,7 +7,7 @@
   <body >
 
         <?php
-      require_once('frag/header.php') ;
+   require_once('frag/header-logged.php');
 
   require_once('frag/regiterinde.php');
  require_once('frag/footer.php');?>

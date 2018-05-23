@@ -558,6 +558,12 @@ footer .nave li {
    }
    .menu .lupa img {
     display: none;}
+    .menu .lupa p{
+  display: inline-block;
+  color: white;
+  
+}
+
    .menu .lupa input {
  display: inline-block;
  width: 100px;}

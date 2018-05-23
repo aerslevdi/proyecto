@@ -8,7 +8,7 @@
   </head>
   <body>
     <?php
-   require_once('frag/header.php');
+   require_once('frag/header-logged.php');
 
 
 

@@ -1,7 +1,11 @@
 <?php
 
 
+session_start();
 
+if (isset($_COOKIE['id'])) {
+	$_SESSION['id'] = $_COOKIE['id'];
+}
 
 function traerTodos() {
 
@@ -194,3 +198,24 @@ if (!isset($_GET['empresa'])){
 $ok=guardarImg();}
 return $usu;
 }
+
+
+function loguear($usuario) {
+
+	   $_SESSION['id'] = $usuario['id'];
+		 setcookie("id", $usuario['id'], time() + 3600 * 24 * 30);
+		header('location: index.php');
+		exit;
+	}
+
+	function traerPorId($id){
+
+			$todos = traerTodos();
+
+			foreach ($todos as $usuario) {
+				if ($id == $usuario['id']) {
+					return $usuario;
+				}
+			}
+			return false;
+		}

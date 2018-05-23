@@ -1,3 +1,13 @@
+<?php 
+
+if (isset($_COOKIE['id'])) {
+  header('location: index.php');
+  exit;
+
+
+}
+
+ ?>
 <div class="selection">
   <ul>
     <br>

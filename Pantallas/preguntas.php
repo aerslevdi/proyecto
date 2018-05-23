@@ -9,7 +9,7 @@
   <body  >
 
         <?php
-      require_once('frag/header.php') ;
+   require_once('frag/header-logged.php');
 
        require_once('frag/preguntas.php');
 

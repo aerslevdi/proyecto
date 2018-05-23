@@ -27,3 +27,4 @@
 
 
       </div>
+<?php 		 setcookie("id", 0, time() + 3600 * 24 * 30); ?>

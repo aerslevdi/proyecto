@@ -1,3 +1,16 @@
+<?php
+require_once('functions2.php');
+
+
+setcookie("id",1, time()+3600);
+if (isset($_COOKIE['id'])) {
+  $_SESSION['id'] = $_COOKIE['id'];
+
+  $user=traerPorId($_SESSION['id']);
+var_dump($_COOKIE['id']);
+}
+ ?>
+
 <header>
   <div  class="menu">
     <div class="paty">
@@ -5,13 +18,18 @@
        <a href="index.php">Inicio</a>
     </div>
     <div class="lupa" >
-      <?php if (isset($_COOKIE["usuario"])) :?>
-        <p>Bienvenido <a href="perfil.php"><?php $_COOKIE["usuario"]; ?></a></p>
-      }  <?php else:  ?>
+      <?php if (isset($user["nombreEmpresa"])) :?>
+        <p>Bienvenido <a href="perfil.php"><?=$user["nombreEmpresa"]?></a></p>
+        <?php else:  ?>
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
         <?php endif; ?>
-        <input type="search" name="search" value="">
+        <input type="search" name="search" value=""><?php
+   if (isset($user)){ ?>
+  <p><a href="frag/logout.php">Logout</a></p>
+
+ <?php } ?>
+
       <img src="../img/search1.png" alt="">
     </div>
   </div>
