@@ -20,7 +20,9 @@ var_dump($_COOKIE['id']);
     <div class="lupa" >
       <?php if (isset($user["nombreEmpresa"])) :?>
         <p>Bienvenido <a href="perfil.php"><?=$user["nombreEmpresa"]?></a></p>
-        <?php else:  ?>
+      <?php elseif (isset($user["nombreCompleto"])) {
+        <p>Bienvenido <a href="perfil.php"><?=$user["nombreCompleto"]?></a></p>
+      }:  ?> <?php else: ?>
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
         <?php endif; ?>
