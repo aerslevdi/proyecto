@@ -23,6 +23,8 @@ if ($_POST) {
 if(empty($error)){
 
   guardarUsuario($user);
+var_dump($user);
+
   loguear($user);
 }
           }

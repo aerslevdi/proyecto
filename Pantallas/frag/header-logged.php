@@ -2,7 +2,7 @@
 require_once('functions2.php');
 
 
-setcookie("id",1, time()+3600);
+
 if (isset($_COOKIE['id'])) {
   $_SESSION['id'] = $_COOKIE['id'];
 
@@ -18,16 +18,22 @@ var_dump($_COOKIE['id']);
        <a href="index.php">Inicio</a>
     </div>
     <div class="lupa" >
-      <?php if (isset($user["nombreEmpresa"])) :?>
+
+      <?php
+    
+      if ( isset($_COOKIE['id'])) :
+
+
+      if (isset($user["nombreEmpresa"])) :?>
         <p>Bienvenido <a href="perfil.php"><?=$user["nombreEmpresa"]?></a></p>
-      <?php elseif (isset($user["nombreCompleto"])) {
+      <?php elseif (isset($user["nombreCompleto"]))  : ?>
         <p>Bienvenido <a href="perfil.php"><?=$user["nombreCompleto"]?></a></p>
-      }:  ?> <?php else: ?>
+      <?php endif; else: ?>
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
-        <?php endif; ?>
+      <?php endif; ?>
         <input type="search" name="search" value=""><?php
-   if (isset($user)){ ?>
+   if (isset($_COOKIE['id'])){ ?>
   <p><a href="frag/logout.php">Logout</a></p>
 
  <?php } ?>

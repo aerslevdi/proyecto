@@ -1,7 +1,7 @@
 <?php
 	session_start();
-setcookie("hello", "", time()-3600);
+		 setcookie("id", '', time() -100,'/proyecto/Pantallas');
 	session_destroy();
 
-var_dump($_COOKIE['id']);
+header('location:../../index.php');
 	exit;
