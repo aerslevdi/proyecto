@@ -2,7 +2,6 @@
 require_once('functions2.php');
 
 
-
 if (isset($_COOKIE['id'])) {
   $_SESSION['id'] = $_COOKIE['id'];
 
@@ -14,7 +13,36 @@ if (isset($_COOKIE['id'])) {
 <header>
   <div  class="menu">
     <div class="paty">
+      <label for="menucheck">
       <img src="../img/paty2.png" alt="">
+
+    </label>
+    <input type="checkbox" name="" id="menucheck" value="">
+<ul class="desple">
+  <?php
+  if ( isset($_COOKIE['id'])) :
+
+
+  if (isset($user["nombreEmpresa"])) :?>
+    <li><a href="perfil.php"><?=$user["nombreEmpresa"]?></a></li>
+  <?php elseif (isset($user["nombreCompleto"]))  : ?>
+  <li> <a href="perfil.php"><?=$user["nombreCompleto"]?></a></li>
+  <?php endif; else: ?>
+  <li>    <a href="register-index.php">Crear cuenta</a></li>
+  <li>   <a href="login.php">Iniciar sesion</a></li>
+  <?php endif;
+if (isset($_COOKIE['id'])){ ?>
+<li> <a href="frag/logout.php">Logout </a></li>
+
+
+</ul>
+<?php } ?>
+
+
+
+
+
+</ul>
        <a href="../index.php">Inicio</a>
     </div>
     <div class="lupa" >
@@ -33,6 +61,7 @@ if (isset($_COOKIE['id'])) {
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
       <?php endif; ?>
+
         <input type="search" name="search" value=""><?php
    if (isset($_COOKIE['id'])){ ?>
   <p><a href="frag/logout.php">Logout</a></p>

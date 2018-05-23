@@ -17,6 +17,28 @@ a{text-decoration: none;
   display: block;}
 
 /* FIN RESET */
+.desple{
+
+  display: none;
+  text-align: center;
+  background: white;
+
+  padding:10px 0;
+
+
+
+}
+.menu .desple li a {
+    color: black;
+    z-index: 3;
+}
+#menucheck{
+  display: none;}
+
+  #menucheck:checked + .desple {
+    display: block;
+  }
+
 
 /* INICIO HEADER */
 
@@ -24,6 +46,10 @@ a{text-decoration: none;
   display: none;
 }
 .menu .lupa a {
+ display: none;
+
+}
+.menu .lupa p {
  display: none;
 
 }
@@ -52,6 +78,9 @@ position: relative;
 padding: 10px 0;
 
 }
+.menu .lupa .fotin {
+  display: none;}
+
 .menu .lupa img {
   position:absolute;
   right: 10px;}
