@@ -461,6 +461,17 @@ font-family: 'Pontano Sans', sans-serif;
   display: block;
 }
 
+.hola{
+  padding: 30px;
+}
+
+
+.hola h1{display: inline-block;}
+.fotin {
+  width: 40px;
+  display: inline-block;
+}
+
 @media (orientation:LANDSCAPE) {
  .nav{
    height: 20vh;
@@ -477,7 +488,7 @@ font-family: 'Pontano Sans', sans-serif;
 
 
 @media (min-width:850px){
-
+.menu .lupa .si{display: inline-block;}
 .quien .lado2 {
   padding: 50px;
 }
@@ -561,7 +572,7 @@ footer .nave li {
     .menu .lupa p{
   display: inline-block;
   color: white;
-  
+
 }
 
    .menu .lupa input {

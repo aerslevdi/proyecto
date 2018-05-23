@@ -7,7 +7,7 @@ if (isset($_COOKIE['id'])) {
   $_SESSION['id'] = $_COOKIE['id'];
 
   $user=traerPorId($_SESSION['id']);
-var_dump($_COOKIE['id']);
+
 }
  ?>
 
@@ -15,12 +15,12 @@ var_dump($_COOKIE['id']);
   <div  class="menu">
     <div class="paty">
       <img src="../img/paty2.png" alt="">
-       <a href="index.php">Inicio</a>
+       <a href="../index.php">Inicio</a>
     </div>
     <div class="lupa" >
 
       <?php
-    
+
       if ( isset($_COOKIE['id'])) :
 
 
@@ -28,6 +28,7 @@ var_dump($_COOKIE['id']);
         <p>Bienvenido <a href="perfil.php"><?=$user["nombreEmpresa"]?></a></p>
       <?php elseif (isset($user["nombreCompleto"]))  : ?>
         <p>Bienvenido <a href="perfil.php"><?=$user["nombreCompleto"]?></a></p>
+        <img class="fotin si" src="img/<?=$user['direccionEmail']?>.png" alt="">
       <?php endif; else: ?>
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
