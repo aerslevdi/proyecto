@@ -18,8 +18,8 @@
   <body >
 
         <?php
-   require_once('frag/header-logged.php');
-        require_once('frag/registro.php');
+        require_once('frag/header-logged.php');
+        require_once('frag/login.php');
         require_once('frag/footer.php'); ?>
 
 
