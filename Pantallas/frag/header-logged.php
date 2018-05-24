@@ -57,6 +57,7 @@ if (isset($_COOKIE['id'])){ ?>
       <?php elseif (isset($user["nombreCompleto"]))  : ?>
         <p>Bienvenido <a href="perfil.php"><?=$user["nombreCompleto"]?></a></p>
         <img class="fotin si" src="img/<?=$user['direccionEmail']?>.png" alt="">
+            <img class="fotin si" src="img/<?=$user['direccionEmail']?>.jpg" alt="">
       <?php endif; else: ?>
        <a href="register-index.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
@@ -96,3 +97,7 @@ if (isset($_COOKIE['id'])){ ?>
   </div>
 
 </header>
+
+<div class="med">
+  <img src="../img/este.png" alt="">
+</div>

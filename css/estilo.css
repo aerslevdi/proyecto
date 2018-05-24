@@ -1,7 +1,7 @@
 .form .rojo{
   color: red;
 }
-/* INICIO RESET */
+                                  /* INICIO RESET */
 header {
   width: 100%;
 }
@@ -16,7 +16,20 @@ html{font-size: 14px;}
 a{text-decoration: none;
   display: block;}
 
-/* FIN RESET */
+                                  /* FIN RESET */
+                                  /* LOGO DEL MEDIO */
+.med{
+  padding: 10px 0;
+}
+.med img {
+  height: 55px;
+  width: 160px;
+  display: block;
+  margin: auto;
+
+
+}
+                                    /* MENU DESPLEGABLE */
 .desple{
 
   display: none;
@@ -40,7 +53,7 @@ a{text-decoration: none;
   }
 
 
-/* INICIO HEADER */
+                                  /* INICIO HEADER */
 
 .desktop{
   display: none;
@@ -55,7 +68,7 @@ a{text-decoration: none;
 }
 
 .menu {
-  height: 6vh;
+  height: 60px;
   background-color: #27D6A3;
   display: flex;
   flex-flow: row nowrap;
@@ -86,9 +99,9 @@ padding: 10px 0;
   right: 10px;}
   .menu .lupa input {
 display: none;}
-/* FIN HEADER */
+                                  /* FIN HEADER */
 
-/* INICIO MENU */
+                                  /* INICIO MENU */
 .nav {
   height: 9vh;
   display: flex;
@@ -118,8 +131,8 @@ font-family: 'PT Sans', sans-serif;
   margin: 0 45%;
 
 }
-/* FIN MENU */
-/* INICIO PRODUCTOS */
+                                  /* FIN MENU */
+                                  /* INICIO PRODUCTOS */
 .productos {
 
    display: flex;
@@ -169,7 +182,7 @@ font-family: 'Quicksand', sans-serif;
     font-family: 'PT Sans', sans-serif;
 }
 
-/* FIN PRODUCTOS */
+                                        /* FIN PRODUCTOS */
 
 
 .quien {
@@ -428,10 +441,10 @@ font-family: 'Pontano Sans', sans-serif;
      text-align: center;
    }
 
- /* FIN DE FORMULARIO REGISTRO LOGIN HTML  */
+                                         /* FIN DE FORMULARIO REGISTRO LOGIN HTML  */
 
 
- /*Inicio eleccion de registro*/
+                                         /*Inicio eleccion de registro*/
  .selection {
    background-color:#394b5c;
    border-color:rgb(140, 132, 132)none 0px;
@@ -459,7 +472,7 @@ font-family: 'Pontano Sans', sans-serif;
    margin-right: auto;
    width: 250px;
  }
- /* FAQ */
+                                         /* FAQ */
  .caja {
    margin: 10%;
    width: 80%;
@@ -480,7 +493,7 @@ font-family: 'Pontano Sans', sans-serif;
    color: black;font-size: 1.5rem;
    margin: 0 40px;font-family: 'Dosis', sans-serif;}
 
-/* TEXTO ERROR */
+                                        /* TEXTO ERROR */
 
 .error{
   color: red;
@@ -493,9 +506,9 @@ font-family: 'Pontano Sans', sans-serif;
 .hola{
   padding: 30px;
 }
-
-
+                                        /* PERFIL */
 .hola h1{display: inline-block;}
+
 .fotin {
   width: 40px;
   display: inline-block;

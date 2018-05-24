@@ -1,6 +1,7 @@
 <div class="hola">
   <h1>Bienvenidx <?=$user['direccionEmail'] ?></h1>
   <img class="fotin" src="img/<?=$user['direccionEmail']?>.png" alt="">
+    <img class="fotin" src="img/<?=$user['direccionEmail']?>.jpg" alt="">
 </div>
 
 <div class="caja">
