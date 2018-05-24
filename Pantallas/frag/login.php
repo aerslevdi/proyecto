@@ -1,11 +1,24 @@
+<?php
+if (isset($_COOKIE['id'])) {
+  header('location: index.php');
+  exit;
+}
+require_once('functions2.php');
+
+
+
+ ?>
+
+
+
 <section class="form">
      <div class="fa">
-       <form  action="/action_page.php" method="post">
+       <form  method="post">
          <fieldset class="login">
            <legend>Iniciar sesion</legend>
            <p>
-             <label>Usuario</label><br>
-             <input type="text" name="usuario"required>
+             <label>Email</label><br>
+             <input type="text" name="usuario" required>
            </p>
            <p>
              <label>Contraseña</label><br>
