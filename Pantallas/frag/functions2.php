@@ -3,8 +3,8 @@
 
 session_start();
 
-if (isset($_COOKIE['id'])) {
-	$_SESSION['id'] = $_COOKIE['id'];
+if (isset($_COOKIE['isolid'])) {
+	$_SESSION['id'] = $_COOKIE['isolid'];
 }
 
 function traerTodos() {
@@ -77,7 +77,7 @@ function crearusu($dato){
   $user['cuit']=trim($dato['cuit']);
   $user['matricula']=trim($dato['matricula']); }
 
-
+		  $user['area']=trim($dato['area']);
   $user['direccionEmail']=trim($dato['direccionEmail']);
 
 
@@ -203,7 +203,7 @@ return $usu;
 function loguear($usuario) {
 
 	   $_SESSION['id'] = $usuario['id'];
-		 setcookie("id", $usuario['id'], time() + 3600 * 24 * 30);
+		 setcookie("isolid", $usuario['id'], time() + 3600 * 24 * 30);
 		header('location: index.php');
 		exit;
 	}

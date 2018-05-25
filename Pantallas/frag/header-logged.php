@@ -2,8 +2,8 @@
 require_once('functions2.php');
 
 
-if (isset($_COOKIE['id'])) {
-  $_SESSION['id'] = $_COOKIE['id'];
+if (isset($_COOKIE['isolid'])) {
+  $_SESSION['id'] = $_COOKIE['isolid'];
 
   $user=traerPorId($_SESSION['id']);
 
@@ -20,7 +20,7 @@ if (isset($_COOKIE['id'])) {
     <input type="checkbox" name="" id="menucheck" value="">
 <ul class="desple">
   <?php
-  if ( isset($_COOKIE['id'])) :
+  if ( isset($_COOKIE['isolid'])) :
 
 
   if (isset($user["nombreEmpresa"])) :?>
@@ -31,7 +31,7 @@ if (isset($_COOKIE['id'])) {
   <li>    <a href="register-index.php">Crear cuenta</a></li>
   <li>   <a href="login.php">Iniciar sesion</a></li>
   <?php endif;
-if (isset($_COOKIE['id'])){ ?>
+if (isset($_COOKIE['isolid'])){ ?>
 <li> <a href="frag/logout.php">Logout </a></li>
 
 
@@ -49,7 +49,7 @@ if (isset($_COOKIE['id'])){ ?>
 
       <?php
 
-      if ( isset($_COOKIE['id'])) :
+      if ( isset($_COOKIE['isolid'])) :
 
 
       if (isset($user["nombreEmpresa"])) :?>
@@ -64,7 +64,7 @@ if (isset($_COOKIE['id'])){ ?>
       <?php endif; ?>
 
         <input type="search" name="search" value=""><?php
-   if (isset($_COOKIE['id'])){ ?>
+   if (isset($_COOKIE['isolid'])){ ?>
   <p><a href="frag/logout.php">Logout</a></p>
 
  <?php } ?>

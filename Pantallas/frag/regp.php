@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_COOKIE['id'])) {
+if (isset($_COOKIE['isolid'])) {
   header('location: index.php');
   exit;
 
@@ -26,49 +26,49 @@ if (isset($_COOKIE['id'])) {
             </div>
             <?php if (!isset($_GET['empresa'])):?><p class="register-p">
               <label>Nombre completo</label><br>
-              <input type="text" name="nombreCompleto" value="<?php echo $user['nombreCompleto'] ?>" >
+              <input type="text" name="nombreCompleto" value="<?=$user['nombreCompleto'] ?>" >
             </p>
             <?php else:  ?>
               <p class="register-p">
                 <label>Nombre de empresa</label><br>
-                <input type="text" name="nombreEmpresa" value="<?php echo $user['nombreEmpresa'] ?>">
+                <input type="text" name="nombreEmpresa" value="<?=$user['nombreEmpresa'] ?>">
               </p>
             <?php endif; ?>
       <p class="register-p">
         <label>E-Mail</label><br>
-        <input type="email" name="direccionEmail" value="<?php echo   $user['direccionEmail'] ?>">
+        <input type="email" name="direccionEmail" value="<?=$user['direccionEmail'] ?>">
       </p>
       <?php if (!isset($_GET['empresa'])):?>
         <p class="register-p">
           <label>C.U.I.T.</label><br>
-          <input type="text" name="cuit" value="<?php echo   $user['cuit'] ?>">
+          <input type="text" name="cuit" value="<?=$user['cuit'] ?>">
         </p>
         <?php else:  ?>
           <p class="register-p">
             <label>Razón social</label><br>
-            <input type="text" name="razon" value="<?php echo $user['razon']?>">
+            <input type="text" name="razon" value="<?=$user['razon']?>">
           </p>
       <?php endif; ?>
       <p class="register-p">
      <label>Teléfono de contacto</label><br>
-     <input type="tel"  name='telefono' id='phone' value="<?php echo   $user['telefono'] ?>">
+     <input type="tel"  name='telefono' id='phone' value="<?=$user['telefono'] ?>">
    </p>
    <p class="register-p">
      <label>Dirección de domicilio</label>
-     <input type="text" name="direccion" id="direccion" value="<?php echo   $user['direccion']?>">
+     <input type="text" name="direccion" id="direccion" value="<?=$user['direccion']?>">
    </p>
    <?php if (isset($_GET['empresa'])):?>
       <p class="register-p">
         <label>Puesto</label><br>
-        <input type="text" name="puesto" value="<?php echo   $user['puesto']?>">
+        <input type="text" name="puesto" value="<?=$user['puesto']?>">
       </p>
     <?php endif; ?>
       <p class="register-p">
         <label for="area">Area de trabajo</label><br>
-        <select class="option" name="asunto" value='<?php echo $asunto ?>'>
+        <select class="option" name="asunto" value='<?=$asunto ?>'>
           <option value="">Seleccione</option>
           <?php foreach ($asunto as $value): ?> <?php if ($asunto2 == $value): ?>
-             <option selected value="<?=$value?>"><?=$value?></option>
+             <option name:"area" value="<?=$value?>"><?=$value?></option>
              <?php continue;
            endif;?>
            <option value="<?=$value?>" ><?=$value?></option>
@@ -78,7 +78,7 @@ if (isset($_COOKIE['id'])) {
       <?php if (!isset($_GET['empresa'])):?>
       <p class="register-p">
         <label>Matricula</label><br>
-        <input type="text" name="matricula" value="<?php echo $user['matricula'] ?>" >
+        <input type="text" name="matricula" value="<?=$user['matricula'] ?>" >
       </p>
       <p class="register-p">
         <label>Estudios</label><br>

@@ -4,7 +4,7 @@
      <?php require_once('frag/head.php');
 
 
-     if (isset($_COOKIE['id'])) {
+     if (isset($_COOKIE['isolid'])) {
        header('location: index.php');
        exit;
 
