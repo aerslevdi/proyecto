@@ -302,11 +302,7 @@ font-family: 'Pontano Sans', sans-serif;
      color:#8c8484;
    }
 
- .form .publicidad {
-   width: 30%;
-   height: 30px;
-   display: inline-block;
- }
+
 
 
  .form  fieldset {
@@ -321,9 +317,17 @@ font-family: 'Pontano Sans', sans-serif;
  label{
    color: white;
  }
+
+.form .fa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
    .form .fa form{
-     width: 30%;
-     margin: 0 35%;
+     width:50%;
+     min-width: 200px;
 
    }
  .register-p {

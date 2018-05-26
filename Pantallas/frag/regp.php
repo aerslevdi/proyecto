@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_COOKIE['isolid'])) {
+if (isset($_SESSION['id'])) {
   header('location: index.php');
   exit;
 
@@ -63,18 +63,7 @@ if (isset($_COOKIE['isolid'])) {
         <input type="text" name="puesto" value="<?=$user['puesto']?>">
       </p>
     <?php endif; ?>
-      <p class="register-p">
-        <label for="area">Area de trabajo</label><br>
-        <select class="option" name="asunto" value='<?=$asunto ?>'>
-          <option value="">Seleccione</option>
-          <?php foreach ($asunto as $value): ?> <?php if ($asunto2 == $value): ?>
-             <option name:"area" value="<?=$value?>"><?=$value?></option>
-             <?php continue;
-           endif;?>
-           <option value="<?=$value?>" ><?=$value?></option>
-          <?php endforeach; ?>
-        </select>
-      </p>
+
       <?php if (!isset($_GET['empresa'])):?>
       <p class="register-p">
         <label>Matricula</label><br>

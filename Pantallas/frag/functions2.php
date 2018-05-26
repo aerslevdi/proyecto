@@ -77,7 +77,7 @@ function crearusu($dato){
   $user['cuit']=trim($dato['cuit']);
   $user['matricula']=trim($dato['matricula']); }
 
-		  $user['area']=trim($dato['area']);
+
   $user['direccionEmail']=trim($dato['direccionEmail']);
 
 
@@ -203,7 +203,7 @@ return $usu;
 function loguear($usuario) {
 
 	   $_SESSION['id'] = $usuario['id'];
-		 setcookie("isolid", $usuario['id'], time() + 3600 * 24 * 30);
+
 		header('location: index.php');
 		exit;
 	}
@@ -219,3 +219,23 @@ function loguear($usuario) {
 			}
 			return false;
 		}
+		function validarLogin($data) {
+				$arrayADevolver = [];
+				$email = trim($data['email']);
+				$pass = trim($data['pass']);
+				if ($email == '') {
+					$arrayADevolver['email'] = 'Completá tu email';
+				} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+					$arrayADevolver['email'] = 'Poné un formato de email válido';
+				} elseif (!$usuario = existeEmail($email)) {
+					$arrayADevolver['email'] = 'Este email no está registrado';
+				} else {
+
+
+
+		      	if (!password_verify($pass, $usuario["pass1"])) {
+		         	$arrayADevolver['pass'] = "Credenciales incorrectas";
+		      	}
+				}
+				return $arrayADevolver;
+			}

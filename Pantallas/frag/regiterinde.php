@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_COOKIE['isolid'])) {
+if (isset($_SESSION['id'])) {
   header('location: index.php');
   exit;
 
