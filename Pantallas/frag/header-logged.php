@@ -23,12 +23,12 @@ if (isset($_SESSION['id'])) {
   if ( isset($_SESSION['id'])) :
 
 
-  if (isset($user["nombreEmpresa"])) :?>
-    <li><a href="perfil.php"><?=$user["nombreEmpresa"]?></a></li>
-  <?php elseif (isset($user["nombreCompleto"]))  : ?>
-  <li> <a href="perfil.php"><?=$user["nombreCompleto"]?></a></li>
+  if (isset($user["name"])) :?>
+    <li><a href="perfil.php"><?=$user["name"]?></a></li>
+  <?php elseif (isset($user["name"]))  : ?>
+  <li> <a href="perfil.php"><?=$user["name"]?></a></li>
   <?php endif; else: ?>
-  <li>    <a href="register-index.php">Crear cuenta</a></li>
+  <li>    <a href="register.php">Crear cuenta</a></li>
   <li>   <a href="login.php">Iniciar sesion</a></li>
   <?php endif;
 if (isset($_SESSION['id'])){ ?>
@@ -52,14 +52,14 @@ if (isset($_SESSION['id'])){ ?>
       if ( isset($_SESSION['id'])) :
 
 
-      if (isset($user["nombreEmpresa"])) :?>
-        <p>Bienvenido <a href="perfil.php"><?=$user["nombreEmpresa"]?></a></p>
+      if (isset($user["name"])) :?>
+        <p>Bienvenido <a href="perfil.php"><?=$user["name"]?></a></p>
       <?php elseif (isset($user["nombreCompleto"]))  : ?>
-        <p>Bienvenido <a href="perfil.php"><?=$user["nombreCompleto"]?></a></p>
+        <p>Bienvenido <a href="perfil.php"><?=$user["name"]?></a></p>
         <img class="fotin si" src="img/<?=$user['direccionEmail']?>.png" alt="">
             <img class="fotin si" src="img/<?=$user['direccionEmail']?>.jpg" alt="">
       <?php endif; else: ?>
-       <a href="register-index.php">Crear cuenta</a>
+       <a href="register.php">Crear cuenta</a>
         <a href="login.php">Iniciar sesion</a>
       <?php endif; ?>
 

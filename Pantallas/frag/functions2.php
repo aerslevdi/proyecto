@@ -39,8 +39,8 @@ function traerTodos() {
     function existeEmpresa($empresa){
     		$todos = traerTodos();
     		foreach ($todos as $unUsuario) {
-          if(!empty($unUsuario['nombreEmpresa'])){
-    			if ($unUsuario['nombreEmpresa'] == $empresa) {
+          if(!empty($unUsuario['name'])){
+    			if ($unUsuario['name'] == $empresa) {
     				return $unUsuario;
     			}
     		}}
@@ -67,32 +67,20 @@ function traerTodos() {
 function crearusu($dato){
 
 
-	if (isset($_GET['empresa'])){
-      $user['nombreEmpresa']=trim($dato['nombreEmpresa']);
-		  $user['puesto']=trim($dato['puesto']);
-		  $user['razon']=trim($dato['razon']);
-}
-	if (!isset($_GET['empresa'])){
-  $user['nombreCompleto']=trim($dato['nombreCompleto']);
-  $user['cuit']=trim($dato['cuit']);
-  $user['matricula']=trim($dato['matricula']); }
 
 
-  $user['direccionEmail']=trim($dato['direccionEmail']);
+  $user['name']=strtolower(trim($dato['name']));
+  $user['iden']=trim($dato['iden']);
 
+  $user['entidad']=trim($dato['entidad']);
 
+  $user['direccionEmail']=strtolower(trim($dato['direccionEmail']));
   $user['id']=traerUltimoID();
   $user['direccion']=trim($dato['direccion']);
   $user['telefono']=trim($dato['telefono']);
-
   $user['pass1']=password_hash($dato['contrasenia'], PASSWORD_DEFAULT);
-
-  if(isset($dato['estudios'])){
-  $user['estudios']=trim($dato['estudios']);
-}
-
-				 if(isset($_FILES['perfil'])){
-					 $user['foto']='img/' . $dato['direccionEmail'] . '.' . pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION);
+	  if(isset($_FILES['foto'])){
+			 $user['foto']='img/' . $dato['direccionEmail'] . '.' . pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION);
 
 
 				}
@@ -106,26 +94,11 @@ function validar ($user){
  $error=[];
 
 
+		if($user['name'] ==''){
+			$error['name']='Ingrese una nombre';}
 
 
 
-	if (isset($_GET['empresa'])){
-		if($user['nombreEmpresa'] ==''){
-			$error['empresa']='Ingrese una empresa';
-		}elseif($r=existeEmpresa($user['nombreEmpresa'])){
-					$error['empresa']='Empresa ya existente';
-		}
-		if($user['puesto']== ''){
-	    $error['puesto']='Ingrese un puesto';
-	  }
-
-
-}
-
-	if (!isset($_GET['empresa'])){
-		if(!isset($user['estudios'])){
-	    $error['estudio']='Ingrese estudios';
-	  }
 		if(isset($_FILES)){
 	 $ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
 			if ($ext!='') {
@@ -134,19 +107,19 @@ function validar ($user){
 					$error['avatar'] = "Formatos admitidos: JPG o PNG";
 		 }
 	 }}
-  if ($user['nombreCompleto']=='') {
-    $error['name']='Ingrese un nombre';
+
+
+
+
+
+	if($user['iden']== ''){
+    $error['iden']='Ingrese un dni o razon';
   }
-	if($user['cuit']== ''){
-    $error['cuit']='Ingrese un cuit';
-  }
-	if($user ['matricula']== ''){
-    $error['matricula']='Ingrese una matricula';
-  }}
+
 
   if ($user['direccionEmail']== '' ||  ! filter_var($user['direccionEmail'], FILTER_VALIDATE_EMAIL)) {
     $error['email']='Ingrese un mail valido';
-  }elseif($r=existeEmail($user['direccionEmail'])){
+  }elseif($r=existeEmail( strtolower($user['direccionEmail']))){
         $error['email']='Email ya existe';
   }
 
@@ -169,9 +142,7 @@ function validar ($user){
 	  }
 
 
-  if(isset($error)){
-		  return $error;
-	}
+
 
   return $error;
 }
@@ -179,11 +150,11 @@ function validar ($user){
 function guardarIMg(){
 
 
-		$nombreArchivo = $_FILES['perfil']['name'];
+		$nombreArchivo = $_FILES['foto']['name'];
 
 		$ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
 
-		$archivoFisico = $_FILES['perfil']['tmp_name'];
+		$archivoFisico = $_FILES['foto']['tmp_name'];
 		$dondeEstoyParado = dirname(__FILE__);
 			$rutaFinalConNombre = $dondeEstoyParado . '../../img/' . $_POST['direccionEmail'] . '.' . $ext;
 
@@ -194,8 +165,7 @@ function guardarUsuario($usu){
 $usu=json_encode($usu);
 
 file_put_contents('../datos/dato.json',  $usu .PHP_EOL, FILE_APPEND);
-if (!isset($_GET['empresa'])){
-$ok=guardarImg();}
+$ok=guardarImg();
 return $usu;
 }
 
@@ -219,6 +189,7 @@ function loguear($usuario) {
 			}
 			return false;
 		}
+
 		function validarLogin($data) {
 				$arrayADevolver = [];
 				$email = trim($data['email']);
