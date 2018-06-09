@@ -1,3 +1,4 @@
-{"name":"juan","iden":"232131231","direccionEmail":"jose@gmail.com","id":1,"direccion":"buenos aires","telefono":"332323r4","pass1":"$2y$10$v.mqoqBZ3eDjN6KKw\/t7yOOmnSEWwI7uUL8ySOjAq119ilBWt8zvO"}
+{"name":"Administrador","iden":"000000","entidad":"1","direccionEmail":"admin@gmail.com","id":0,"direccion":"000000","telefono":"00000","pass1":"$2y$10$7CJJweqeOUKjZ8KGgWlqR.zqq\/nROS8sflKsLLLyg.a.rrXrFjCLi","foto":"img\/fafafaf@gmail.com."}
+
 {"name":"tomas","iden":"234134234","entidad":"1","direccionEmail":"tede@gmail.com","id":2,"direccion":"234234","telefono":"234234234","pass1":"$2y$10$u22P45BzfDXPtzjp8XY4h.0vDFgFtNrhKk0Q\/N.\/1f0Jq.Ao1QjpO"}
 {"name":"asdasd","iden":"sadasd","entidad":"1","direccionEmail":"fafafaf@gmail.com","id":3,"direccion":"asdsadsad","telefono":"SADASDasd","pass1":"$2y$10$7CJJweqeOUKjZ8KGgWlqR.zqq\/nROS8sflKsLLLyg.a.rrXrFjCLi","foto":"img\/fafafaf@gmail.com."}

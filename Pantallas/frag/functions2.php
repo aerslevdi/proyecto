@@ -80,7 +80,7 @@ function crearusu($dato){
   $user['telefono']=trim($dato['telefono']);
   $user['pass1']=password_hash($dato['contrasenia'], PASSWORD_DEFAULT);
 	  if(isset($_FILES['foto'])){
-			 $user['foto']='img/' . $dato['direccionEmail'] . '.' . pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION);
+			 $user['foto']='img/' . $dato['direccionEmail'] . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
 
 
 				}
@@ -100,7 +100,7 @@ function validar ($user){
 
 
 		if(isset($_FILES)){
-	 $ext = strtolower(pathinfo($_FILES['perfil']['name'], PATHINFO_EXTENSION));
+	 $ext = strtolower(pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
 			if ($ext!='') {
 				if($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
 
