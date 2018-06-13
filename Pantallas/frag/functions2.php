@@ -161,13 +161,7 @@ function guardarIMg(){
 			move_uploaded_file($archivoFisico, $rutaFinalConNombre);
 			return true;
 }
-function guardarUsuario($usu){
-$usu=json_encode($usu);
 
-file_put_contents('../datos/dato.json',  $usu .PHP_EOL, FILE_APPEND);
-$ok=guardarImg();
-return $usu;
-}
 
 
 function loguear($usuario) {

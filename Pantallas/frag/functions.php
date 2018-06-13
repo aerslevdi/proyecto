@@ -1,5 +1,7 @@
 <?php
 require_once('functions2.php');
+require_once('objets/save.php');
+require_once('objets/user.php');
 $user['name']='';
 $user['direccionEmail']='';
 $user['iden']='';
@@ -14,10 +16,10 @@ if ($_POST) {
 
 
 if(empty($error)){
-
-  guardarUsuario($user);
-
-
+  $usu=new Persona($user);
+  $db= new Json();
+  $db->guarda($user);
   loguear($user);
+
 }
           }

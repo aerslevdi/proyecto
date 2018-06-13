@@ -26,25 +26,25 @@ if (isset($_SESSION['id'])) {
             </div>
           <p class="register-p">
               <label>Nombre Completo o Nombre Empresa*</label><br>
-              <input type="text" name="name" value="<?=$user['name'] ?>" >
+              <input type="text"  name="name" value="<?=$user['name'] ?>"  placeholder="Ej: Jose Mendez /Telechor" >
             </p>
       <p class="register-p">
         <label>E-Mail*</label><br>
-        <input type="email" name="direccionEmail" value="<?=$user['direccionEmail'] ?>">
+        <input type="email" name="direccionEmail" value="<?=$user['direccionEmail'] ?>" placeholder="Ej: ejemplo@isol.com">
       </p>
 
         <p class="register-p">
           <label>DNI o Razon Social*</label><br>
-          <input type="text" name="iden" value="<?=$user['iden'] ?>">
+          <input type="text" name="iden" value="<?=$user['iden'] ?>" placeholder="Ej: 123***345">
         </p>
 
       <p class="register-p">
      <label>Teléfono de contacto*</label><br>
-     <input type="tel"  name='telefono' value="<?=$user['telefono'] ?>">
+     <input type="tel"  name='telefono' value="<?=$user['telefono'] ?>" placeholder="Ej: 011 4******32">
    </p>
    <p class="register-p">
      <label>Dirección de domicilio*</label>
-     <input type="text" name="direccion" id="direccion" value="<?=$user['direccion']?>">
+     <input placeholder="Ej:Av.Siemprevivas nro 123" type="text" name="direccion" value="<?=$user['direccion']?>"      >
    </p>
 
    <p class="register-p">
@@ -61,11 +61,11 @@ if (isset($_SESSION['id'])) {
 
       <p class="register-p">
         <label>Contraseña*</label><br>
-        <input type="password" name="contrasenia" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos 8 caracteres ,un numero ,mayuscula,minuscula">
+        <input type="password" name="contrasenia"  placeholder="Ej: Contra123!" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos 8 caracteres ,un numero ,mayuscula,minuscula">
       </p>
       <p class="register-p">
         <label>Repetir contraseña*</label><br>
-        <input type="password" name="contrasenia2" value="" >
+        <input type="password" name="contrasenia2" value=""  placeholder="Ej: Contra123!">
       </p>
       <?php if (!isset($_GET['empresa'])):?>
       <p class="register-p">
