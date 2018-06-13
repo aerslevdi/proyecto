@@ -4,22 +4,33 @@ if (isset($_SESSION['id'])) {
   exit;
 }
 require_once('functions2.php');
+require_once('objets/save.php');
 
 $email = '';
 
 	$errores = [];
 
 	if ($_POST) {
+    $sql= new mysql();
 		$email = trim($_POST['email']);
-		$errores = validarLogin($_POST);
+		$errores = validarLoginSql($_POST,$sql);
     if (empty($errores)) {
- 			$usuario = existeEmail($email);
+      $consultaUser=$db->prepare('SELECT * FROM usuario WHERE mail=:mail');
+      $consultaUser->bindValue(':mail',$email);
+      $consultaUser->execute();
+      $user=$consultaUser->fetch();
+
+
+
+
+
+
 
 
  			if (isset($_POST['recordar'])) {
- 	        setcookie('isolid', $usuario['id'], time() + 3600 * 24 * 30);
+ 	        setcookie('isolid', $user['id'], time() + 3600 * 24 * 30);
  	      }
- 			loguear($usuario);
+ 			loguear($user);
  			exit;
  		}
 

@@ -7,6 +7,20 @@ if (isset($_COOKIE['isolid'])) {
 	$_SESSION['id'] = $_COOKIE['isolid'];
 }
 
+
+$dns='mysql:host=localhost;dbname=isoldb;charset=utf8mb4;port=3306';
+$db_user='root';
+$db_pass='root';
+
+try {
+  $db=new PDO($dns,$db_user,$db_pass);
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch (Exception $e) {
+   echo $e->getMessage();
+}
+
+
 function traerTodos() {
 
 		$todosJson = file_get_contents('../datos/dato.json');
@@ -66,9 +80,6 @@ function traerTodos() {
 
 function crearusu($dato){
 
-
-
-
   $user['name']=strtolower(trim($dato['name']));
   $user['iden']=trim($dato['iden']);
 
@@ -90,7 +101,7 @@ return $user;
 
 
 
-function validar ($user){
+function validar ($user,$sql){
  $error=[];
 
 
@@ -119,7 +130,7 @@ function validar ($user){
 
   if ($user['direccionEmail']== '' ||  ! filter_var($user['direccionEmail'], FILTER_VALIDATE_EMAIL)) {
     $error['email']='Ingrese un mail valido';
-  }elseif($r=existeEmail( strtolower($user['direccionEmail']))){
+  }elseif($sql->ExisteMail( strtolower($user['direccionEmail']))){
         $error['email']='Email ya existe';
   }
 
@@ -172,6 +183,9 @@ function loguear($usuario) {
 		exit;
 	}
 
+
+
+
 	function traerPorId($id){
 
 			$todos = traerTodos();
@@ -183,6 +197,23 @@ function loguear($usuario) {
 			}
 			return false;
 		}
+
+
+		function traerPorIdSql($id){
+      global $db ;
+      $consultaUser=$db->prepare('SELECT nombre FROM usuario WHERE id=:id');
+			$consultaUser->bindValue(':id',$id);
+			$consultaUser->execute();
+      $namedb=$consultaUser->fetch();
+			return $namedb;
+
+
+
+			}
+
+
+
+
 
 		function validarLogin($data) {
 				$arrayADevolver = [];
@@ -204,3 +235,30 @@ function loguear($usuario) {
 				}
 				return $arrayADevolver;
 			}
+
+			function validarLoginSql($data,$sql) {
+				global $db;
+					$arrayADevolver = [];
+					$email = trim($data['email']);
+					$pass1 = trim($data['pass']);
+
+					if ($email == '') {
+						$arrayADevolver['email'] = 'Completá tu email';
+					} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						$arrayADevolver['email'] = 'Poné un formato de email válido';
+					} elseif (!$sql->ExisteMail($email)) {
+						$arrayADevolver['email'] = 'Este email no está registrado';
+					} else {
+
+						$consultaUser=$db->prepare('SELECT pass FROM usuario WHERE mail=:mail');
+						$consultaUser->bindValue(':mail',$email);
+						$consultaUser->execute();
+						$pass=$consultaUser->fetch();
+
+							if (!password_verify($pass1,$pass['pass'])) {
+								$arrayADevolver['pass'] = "Credenciales incorrectas";
+							}
+					}
+					
+					return $arrayADevolver;
+				}

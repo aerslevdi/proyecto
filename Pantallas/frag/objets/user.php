@@ -30,7 +30,9 @@ abstract class User {
 
       }
 
-
+    function getData(){
+      return $this->data;
+    }
 
 
 
