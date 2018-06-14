@@ -1,5 +1,73 @@
 <?php
  class Json {
+   function traerTodos() {
+
+   		$todosJson = file_get_contents('../datos/dato.json');
+
+   		$usuariosArray = explode(PHP_EOL, $todosJson);
+
+   		array_pop($usuariosArray);
+
+   		$todosPHP = [];
+
+   		foreach ($usuariosArray as $usuario) {
+   			$todosPHP[] = json_decode($usuario, true);
+   		}
+   		return $todosPHP;
+   	}
+
+     function existeEmail($email){
+
+     		$todos = traerTodos();
+
+     		foreach ($todos as $unUsuario) {
+
+     			if ($unUsuario['direccionEmail'] == $email) {
+     				return $unUsuario;
+     			}
+     		}
+     		return false;
+     	}
+
+   function existeEmpresa($empresa){
+       $todos = traerTodos();
+       foreach ($todos as $unUsuario) {
+         if(!empty($unUsuario['name'])){
+         if ($unUsuario['name'] == $empresa) {
+           return $unUsuario;
+         }
+       }}
+       return false;
+     }
+
+
+
+     function traerUltimoID(){
+
+         $usuarios = traerTodos();
+         if (count($usuarios) == 0) {
+           return 1;
+         }
+
+         $elUltimo = array_pop($usuarios);
+
+         $id = $elUltimo['id'];
+
+         return $id + 1;
+       }
+
+   	function traerPorId($id){
+
+   			$todos = traerTodos();
+
+   			foreach ($todos as $usuario) {
+   				if ($id == $usuario['id']) {
+   					return $usuario;
+   				}
+   			}
+   			return false;
+   		}
+
 
   function guarda( $usu){
     $usu=json_encode($usu);
@@ -7,6 +75,12 @@
     $ok=guardarImg();
 
   }}
+
+
+
+
+
+
   class mysql {
 
 
@@ -31,6 +105,22 @@
   }
 
 
+
+  		function traerPorIdSql($id){
+        global $db ;
+        $consultaUser=$db->prepare('SELECT nombre FROM usuario WHERE id=:id');
+  			$consultaUser->bindValue(':id',$id);
+  			$consultaUser->execute();
+        $namedb=$consultaUser->fetch();
+  			return $namedb;
+
+
+
+  			}
+
+
+
+
    function guarda(user $usu){
          global $db;
      $dato=$usu->getData();
@@ -47,7 +137,7 @@
         $insertUser->bindValue(':entidad',$dato['entidad'],PDO::PARAM_STR);
         $insertUser->bindValue(':foto',$dato['foto'],PDO::PARAM_STR);
         $insertUser->bindValue(':pass',$dato['pass'],PDO::PARAM_STR);
-    
+
 
         $insertUser->execute();
 

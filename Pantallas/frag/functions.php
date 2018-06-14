@@ -1,8 +1,8 @@
 <?php
 
 require_once('functions2.php');
-require_once('objets/save.php');
-require_once('objets/user.php');
+require_once('autoload.php');
+
 
 $dns='mysql:host=localhost;dbname=isoldb;charset=utf8mb4;port=3306';
 $db_user='root';
@@ -28,16 +28,20 @@ $user['entidad']='';
 $terminos='';
 $user['foto']='';
 if ($_POST) {
-
+$validador=new validador();
   $user=crearUsu($_POST);
-  $error=validar($user,$sql);
+
+  $error=$validador->validar($user,$sql);
 
 
 if(empty($error)){
+
   $usu=new Persona($user);
   $sql->guarda($usu);
   $user['id']=$db->lastInsertId();
+
   loguear($user);
+
 
 }
           }

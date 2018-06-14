@@ -1,11 +1,11 @@
 <?php
 require_once('functions2.php');
-
+require_once('autoload.php');
 
 if (isset($_SESSION['id'])) {
 
-
-  $user=traerPorIdSql($_SESSION['id']);
+$sql=new mysql();
+  $user=$sql->traerPorIdSql($_SESSION['id']);
 
 }
  ?>

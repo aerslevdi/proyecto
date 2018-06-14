@@ -1,16 +1,7 @@
 <?php
 abstract class User {
 
-// NO DEJA DEFINIR VARIABLES CON INDICE ???
 
-  //  private  $data['name'];
-  //  private  $data['direccionEmail'];
-  //  private  $data['iden'];
-  //  private  $data['telefono'];
-  //  private  $data['direccion'];
-  //  private  $data['entidad'];
-  //  private  $data['img'];
-  //  private  $data['pass'];
 
   private  $data;
 
