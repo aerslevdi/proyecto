@@ -85,6 +85,22 @@
 
 
 
+    function guardarIMg($file,$po){
+
+
+    		$nombreArchivo = $file['foto']['name'];
+
+    		$ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
+
+    		$archivoFisico = $file['foto']['tmp_name'];
+    		$dondeEstoyParado = dirname(__FILE__);
+    			$rutaFinalConNombre = $dondeEstoyParado . '/img/' . $po['direccionEmail'] . '.' . $ext;
+
+    			move_uploaded_file($archivoFisico, $rutaFinalConNombre);
+    			return true;
+    }
+
+
   function ExisteMail($mail){
     global $db;
    try {
@@ -104,7 +120,24 @@
 
   }
 
+  function ExisteEnti($enti){
+    global $db;
+   try {
+     $consultaMail=  $db->prepare('SELECT iden  FROM usuario
+        where iden=:iden');
+     $consultaMail->bindValue(':iden',$enti,PDO::PARAM_STR);
+     $consultaMail->execute();
+     $maildb=$consultaMail->fetch();
+     if($maildb){
+       return true;
+     }
+     return false;
 
+   } catch (Exception $e) {
+        return false;
+   }
+
+  }
 
   		function traerPorIdSql($id){
         global $db ;

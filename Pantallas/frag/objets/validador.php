@@ -29,6 +29,8 @@ class validador {
 
   	if($user['iden']== ''){
       $error['iden']='Ingrese un dni o razon';
+    }elseif($sql->ExisteEnti( strtolower($user['iden']))){
+          $error['iden']='Dni o Razon ya existe';
     }
 
 

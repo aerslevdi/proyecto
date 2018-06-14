@@ -43,20 +43,6 @@ return $user;
 
 
 
-function guardarIMg(){
-
-
-		$nombreArchivo = $_FILES['foto']['name'];
-
-		$ext = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
-
-		$archivoFisico = $_FILES['foto']['tmp_name'];
-		$dondeEstoyParado = dirname(__FILE__);
-			$rutaFinalConNombre = $dondeEstoyParado . '../../img/' . $_POST['direccionEmail'] . '.' . $ext;
-
-			move_uploaded_file($archivoFisico, $rutaFinalConNombre);
-			return true;
-}
 
 
 
