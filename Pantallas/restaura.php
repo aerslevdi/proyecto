@@ -7,22 +7,20 @@ class Create_database
  {
  $this->pdo = new PDO("mysql:host=localhost;", "root", "");
  }
- //creamos la base de datos y las tablas que necesitemos
+
  public function my_db()
  {
-        //creamos la base de datos si no existe
+
  $crear_db = $this->pdo->prepare('CREATE DATABASE IF NOT EXISTS isoldb COLLATE utf8_spanish_ci');
  $crear_db->execute();
 
- //decimos que queremos usar la tabla que acabamos de crear
  if($crear_db):
  $use_db = $this->pdo->prepare('USE isoldb');
  $use_db->execute();
  endif;
 
- //si se ha creado la base de datos y estamos en uso de ella creamos las tablas
  if($use_db):
- //creamos la tabla usuarios
+
  $crear_tb_users = $this->pdo->prepare('
  CREATE TABLE IF NOT EXISTS usuario (
 
@@ -42,7 +40,7 @@ class Create_database
      )');
  $crear_tb_users->execute();
 
- //creamos la tabla posts
+
  $crear_tb_posts = $this->pdo->prepare('
  CREATE TABLE IF NOT EXISTS publicacion (
    `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -61,7 +59,7 @@ class Create_database
 
  }
 }
-//ejecutamos la función my_db para crear nuestra bd y las tablas
+
 $db = new Create_database();
 $db->my_db();
        header('location: restaurar.php');
