@@ -8,10 +8,10 @@
 
         <?php
 
-        require_once('frag/iniciar.php');
 
        require_once('frag/header-logged.php');
-        require_once('frag/regp.php');
+
+       require_once('frag/warning.php');
         require_once('frag/footer.php') ;?>
 
 

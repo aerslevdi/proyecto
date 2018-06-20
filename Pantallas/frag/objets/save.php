@@ -42,19 +42,7 @@
 
 
 
-     function traerUltimoID(){
 
-         $usuarios = traerTodos();
-         if (count($usuarios) == 0) {
-           return 1;
-         }
-
-         $elUltimo = array_pop($usuarios);
-
-         $id = $elUltimo['id'];
-
-         return $id + 1;
-       }
 
    	function traerPorId($id){
 
@@ -81,10 +69,33 @@
 
 
 
-  class mysql {
+  class Mysql {
+
+   private $dns;
+   private $user;
+   private $pass;
+
+   function __construct(){
+     $this->dns='mysql:host=localhost;dbname=isoldb;charset=utf8mb4;port=3306';
+     $this->user='root';
+     $this->pass='';
+
+     try {
+      $this->db=new PDO( $this->dns, $this->user, $this->pass);
+      $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+     } catch (Exception $e) {
+        echo $e->getMessage();
+     }
 
 
 
+
+   }
+
+   function getdb(){
+     return $this->db;
+   }
     function guardarIMg($file,$po){
 
 
@@ -102,9 +113,8 @@
 
 
   function ExisteMail($mail){
-    global $db;
    try {
-     $consultaMail=  $db->prepare('SELECT mail  FROM usuario
+     $consultaMail=  $this->db->prepare('SELECT mail  FROM usuario
         where mail=:email');
      $consultaMail->bindValue(':email',$mail,PDO::PARAM_STR);
      $consultaMail->execute();
@@ -121,9 +131,9 @@
   }
 
   function ExisteEnti($enti){
-    global $db;
+
    try {
-     $consultaMail=  $db->prepare('SELECT iden  FROM usuario
+     $consultaMail=  $this->db->prepare('SELECT iden  FROM usuario
         where iden=:iden');
      $consultaMail->bindValue(':iden',$enti,PDO::PARAM_STR);
      $consultaMail->execute();
@@ -140,28 +150,21 @@
   }
 
   		function traerPorIdSql($id){
-        global $db ;
-        $consultaUser=$db->prepare('SELECT nombre FROM usuario WHERE id=:id');
+
+        $consultaUser=$this->db->prepare('SELECT nombre FROM usuario WHERE id=:id');
   			$consultaUser->bindValue(':id',$id);
   			$consultaUser->execute();
         $namedb=$consultaUser->fetch();
   			return $namedb;
 
-
-
   			}
 
-
-
-
    function guarda(user $usu){
-         global $db;
+
      $dato=$usu->getData();
 
 
-
-
-  $insertUser=$db->prepare('INSERT INTO usuario VALUES(DEFAULT,:nombre,:mail,now(),:iden,:dire,:tel,:entidad,:foto,:pass)');
+  $insertUser=$this->db->prepare('INSERT INTO usuario VALUES(DEFAULT,:nombre,:mail,now(),:iden,:dire,:tel,:entidad,:foto,:pass)');
         $insertUser->bindValue(':nombre',$dato['name'],PDO::PARAM_STR);
         $insertUser->bindValue(':mail',$dato['direccionEmail'],PDO::PARAM_STR);
         $insertUser->bindValue(':iden',$dato['iden'],PDO::PARAM_STR);
@@ -173,9 +176,6 @@
 
 
         $insertUser->execute();
-
-
-
 
 
    }

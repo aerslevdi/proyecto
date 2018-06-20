@@ -1,7 +1,7 @@
 
 <?php
 
-class validador {
+class Validador {
 
 
 
@@ -89,7 +89,7 @@ class validador {
 			}
 
 			function validarLoginSql($data,$sql) {
-				global $db;
+          $db=$sql->getdb();
 					$arrayADevolver = [];
 					$email = trim($data['email']);
 					$pass1 = trim($data['pass']);

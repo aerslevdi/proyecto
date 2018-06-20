@@ -1,9 +1,6 @@
 <?php
 
-require_once('functions2.php');
 require_once('autoload.php');
-
-
 
 
 $sql= new mysql();
@@ -17,9 +14,11 @@ $user['telefono']='';
 $user['entidad']='';
 $terminos='';
 $user['foto']='';
+
 if ($_POST) {
 $validador=new validador();
-  $user=crearUsu($_POST);
+  $auth=new Auth();
+  $user=$Auth->crearUsu($_POST);
 
   $error=$validador->validar($user,$sql);
 
@@ -31,7 +30,7 @@ if(empty($error)){
   $sql->guardarIMg($_FILES,$_POST);
   $user['id']=$db->lastInsertId();
 
-  loguear($user);
+  $auth->loguear($user);
 
 
 }

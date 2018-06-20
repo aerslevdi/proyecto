@@ -3,7 +3,7 @@ if (isset($_SESSION['id'])) {
   header('location: index.php');
   exit;
 }
-require_once('functions2.php');
+
 require_once('autoload.php');
 
 
@@ -12,8 +12,10 @@ $email = '';
 	$errores = [];
 
 	if ($_POST) {
-    $validador= new validador();
-    $sql= new mysql();
+    $validador= new Validador();
+    $sql= new Mysql();
+      $auth= new Auth();
+    $db=$sql->getdb();
 		$email = trim($_POST['email']);
 		$errores = $validador->validarLoginSql($_POST,$sql);
     if (empty($errores)) {
@@ -25,7 +27,8 @@ $email = '';
  			if (isset($_POST['recordar'])) {
  	        setcookie('isolid', $user['id'], time() + 3600 * 24 * 30);
  	      }
- 			loguear($user);
+      
+ 		  $auth->loguear($user);
  			exit;
  		}
 

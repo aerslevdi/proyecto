@@ -1,5 +1,5 @@
 <?php
-require_once('functions2.php');
+session_start();
 require_once('autoload.php');
 
 if (isset($_SESSION['id'])) {
@@ -24,9 +24,9 @@ $sql=new mysql();
 
 
   if (isset($user["nombre"])) :?>
-    <li><a href="perfil.php"><?=$user["nombre"]?></a></li>
+    <li><a href="restaurar.php"><?=$user["nombre"]?></a></li>
   <?php elseif (isset($user["nombre"]))  : ?>
-  <li> <a href="perfil.php"><?=$user["nombre"]?></a></li>
+  <li> <a href="restaurar.php"><?=$user["nombre"]?></a></li>
   <?php endif; else: ?>
   <li>    <a href="register.php">Crear cuenta</a></li>
   <li>   <a href="login.php">Iniciar sesion</a></li>
@@ -53,9 +53,9 @@ if (isset($_SESSION['id'])){ ?>
 
 
       if (isset($user["nombre"])) :?>
-        <p>Bienvenido <a href="perfil.php"><?=$user["nombre"]?></a></p>
+        <p>Bienvenido <a href="restaurar.php"><?=$user["nombre"]?></a></p>
       <?php elseif (isset($user["nombreCompleto"]))  : ?>
-        <p>Bienvenido <a href="perfil.php"><?=$user["nombre"]?></a></p>
+        <p>Bienvenido <a href="restaurar.php"><?=$user["nombre"]?></a></p>
         <img class="fotin si" src="img/<?=$user['direccionEmail']?>.png" alt="">
             <img class="fotin si" src="img/<?=$user['direccionEmail']?>.jpg" alt="">
       <?php endif; else: ?>
