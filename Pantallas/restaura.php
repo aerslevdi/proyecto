@@ -64,4 +64,5 @@ class Create_database
 //ejecutamos la función my_db para crear nuestra bd y las tablas
 $db = new Create_database();
 $db->my_db();
+       header('location: restaurar.php');
 ?>
