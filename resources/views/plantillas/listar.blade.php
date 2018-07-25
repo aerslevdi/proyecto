@@ -2,27 +2,34 @@
 @section('contenido')
   <h1>Lista de Usuarios</h1>
 
-  <ul>
 
 
 
-  @foreach ($usuarios as $value)
+  @foreach ($usuarios as $usu)
+    @php
+    $email = $usu->name;
+    $hash = md5(strtolower(trim($email)));
+    @endphp
 
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://unicornify.pictures/avatar/{{$hash}}?s=640" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{$usu->name}}</h5>
 
-    <div class="alert alert-info" role="alert">
-
-         <img src="public/{{$value->foto}}" alt="">
-
-        <li> <h3>{{$value->name}}</h3>
-        <p>E-Mail: {{$value->email}}  </p>
-       Tel : {{$value->telefono}}
-        </li>
+        <a href="#" class="btn btn-primary">Contactar</a>
+      </div>
     </div>
+
+
+
+
+
+
 
 
   @endforeach
 
-  </ul>
+
 
 
 @endsection

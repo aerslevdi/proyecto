@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,15 +24,27 @@ class HomeController extends Controller
      */
 
     public function index(){
-      return view('plantillas.productos');
+
+$prod=Categoria::all();
+
+      return view('plantillas.productos')->with('productos',$prod);
     }
     public function preguntas(){
       return view('plantillas.preguntas');
     }
 
-    public function productos() {
-      return view('plantillas.productos');
+
+
+
+
+
+    public function perfil($id){
+      $usu = User::find($id);
+
+      return view('plantillas.perfil')->with('usu',$usu);;
     }
+
+
 
 
     public function listar() {

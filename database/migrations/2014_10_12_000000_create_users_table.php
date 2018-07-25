@@ -20,13 +20,36 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->string('entidad');
             $table->string('foto');
+            
+            $table->string('ranking')->default('70');
             $table->string('email')->unique();
             $table->string('iden')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
-    }
+
+
+
+          DB::table('users')->insert([
+                     'name' => 'admin',
+                     'email' => 'admin@isol.com',
+                     'direccion'=>'0',
+                     'telefono'=>'0',
+                     'entidad'=>'0',
+                     'foto'=>'0',
+                     'iden'=>'0',
+
+
+                     'password' => bcrypt('admin123'),
+                 ]);
+
+
+            \DB::commit();
+
+
+}
+
 
     /**
      * Reverse the migrations.
