@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Contact;
 use App\Categoria;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,7 @@ $prod=Categoria::all()->take(6);
 
 
     public function listar($id) {
-    $usu=User::all()->where('cate', $id);;
+    $usu=User::all()->where('cate', $id);
 ;
 
 
@@ -57,6 +58,39 @@ $prod=Categoria::all()->take(6);
 
     }
 
+
+       function Contac(Request $request){
+            $reglas=[
+
+                'mensaje' => 'required',
+              ];
+            $mensajes=['required' => 'Campo sin completar',    ];
+
+            $this->validate($request ,$reglas,$mensajes);
+
+            $mensj= new Contact(['IdRe'=>$request->input('idre'),
+             'mensj'=>$request->input('mensaje'),
+             'IdEnvio'=>$request->input('idEnvio'),
+             'email'=>$request->input('email'),
+            ]);
+            $mensj->save();
+            $cont=Contact::all();
+           return view('plantillas.mensaje') ->with('Mensajes',$cont);
+
+             }
+
+             function mensj($id){
+               $cont=Contact::all()->where('IdRe', $id);
+              return view('plantillas.mensaje') ->with('Mensajes',$cont);
+             }
+
+             function mensjD(Request $request){
+                 $msj = Contact::find($request->input('id'));
+                 $msj->delete();
+                 $cont=Contact::all();
+                return view('plantillas.mensaje') ->with('Mensajes',$cont);
+
+               }
 
 
 

@@ -11,6 +11,14 @@
 |
 */
 
+
+Route::get('/mensajes{id}','HomeController@mensj');
+
+Route::post('/mensajes{id}','HomeController@mensjD');
+
+Route::get('/usuarios{id}','HomeController@listar');
+Route::post('/usuarios{id}','HomeController@Contac');
+
 Route::get('/perfil/{id}','HomeController@perfil');
 Route::get('/preguntas','HomeController@preguntas');
 
@@ -19,7 +27,7 @@ Route::get('/cate','AdminCont@go');
 Route::post('/cate','AdminCont@add');
 
 
-Route::get('/usuarios{id}','HomeController@listar');
+
 
 Route::get('/del','AdminCont@del');
 Route::post('/del','AdminCont@dele');

@@ -2,32 +2,24 @@
 @section('contenido')
 
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Accion</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mensaje</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
 
-  <h1>Lista de Usuarios</h1>
+@foreach($Mensajes as $m)
 
-<br>
+    <tr>
+      <td>
 
-<div class="card-deck">
-  @foreach ($usuarios as $usu)
-    @php
-    $email = $usu->name;
-    $hash = md5(strtolower(trim($email)));
-    @endphp
-
- <br>
-
-    <div class="card" >
-      <img class="card-img-top" src="https://unicornify.pictures/avatar/{{$hash}}?s=640" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{$usu->name}}</h5>
-
-
-        <div class="progress">
-
-          <div class="progress-bar bg-warning" role="progressbar" style="width:{{$usu->ranking}}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Ranking </div>
-        </div><br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                     Contactar
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                     Responder
                    </button>
 
                    <!-- Modal -->
@@ -48,7 +40,7 @@
                            <form method="POST" action="/usuarios{{1}}" >
                              {{ csrf_field() }}
                             <input type="hidden" name="email" value="{{Auth::user()->email}}">
-                              <input type="hidden" name="idre" value="{{$usu->id}}">
+                              <input type="hidden" name="idre" value="{{$m->IdEnvio}}">
                              <input type="hidden" name="idEnvio" value="{{Auth::user()->id}}">
                                <label for="mensaje" class="col-sm-2 col-form-label">Mensaje</label>
                                  <div class="col-sm-9">
@@ -65,21 +57,28 @@
                        </div>
                      </div>
                    </div>
-      </div>
-    </div>
 
 
 
 
 
+        <form class="" action="/mensajes{{Auth::user()->id}}" method="post">
+            @csrf
+          <input type="hidden" name="id" value="{{$m->id}}">
+          <button type="submit" name="button">Eliminar</button>
+        </form>
+
+      </td>
+
+      <td><a href="/perfil/{{$m->IdEnvio}}">{{$m->email}}</a></td>
+      <td class="hi"><pre>{{$m->mensj}}</pre></td>
+      <td> {{$m->created_at}}</td>
+    </tr>
+@endforeach
 
 
-
-  @endforeach
-
-
-</div>
-
+  </tbody>
+</table>
 
 
 @endsection
