@@ -19,7 +19,7 @@ Route::get('/cate','AdminCont@go');
 Route::post('/cate','AdminCont@add');
 
 
-Route::get('/usuarios','HomeController@listar');
+Route::get('/usuarios{id}','HomeController@listar');
 
 Route::get('/del','AdminCont@del');
 Route::post('/del','AdminCont@dele');

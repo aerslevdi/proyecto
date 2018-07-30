@@ -27,7 +27,7 @@ $hash = md5(strtolower(trim($email)));
 
      <div class="producto">
       <div class="foto">
-         <a href="/usuarios"><img src="https://unicornify.pictures/avatar/{{$hash}}?s=640" alt=""></a>
+         <a href="/usuarios{{$p->id}}"><img src="https://unicornify.pictures/avatar/{{$hash}}?s=640" alt=""></a>
       </div>
       <div class="descripcion">
          <p class="titu">{{$p->name}}</p>
