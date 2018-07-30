@@ -16,6 +16,11 @@
       <div class="card-body">
         <h5 class="card-title">{{$usu->name}}</h5>
 
+
+        <div class="progress">
+
+          <div class="progress-bar bg-warning" role="progressbar" style="width:{{$usu->ranking}}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Ranking </div>
+        </div><br>
         <a href="#" class="btn btn-primary">Contactar</a>
       </div>
     </div>
@@ -28,7 +33,15 @@
 
 
   @endforeach
-
+  <nav aria-label="...">
+    <ul class="pagination pagination-sm">
+      <li class="page-item disabled">
+        <a class="page-link" href="/usuarios" tabindex="-1">1</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="/usuarios">2</a></li>
+      <li class="page-item"><a class="page-link" href="/usuarios">3</a></li>
+    </ul>
+  </nav>
 
 
 

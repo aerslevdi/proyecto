@@ -61,6 +61,24 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="cate" class="col-md-4 col-form-label text-md-right">{{ __('*Area de trabajo') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="" name="cate">
+                                <option value="500" selected>Seleccione aqui</option>
+                            <option value="1" >Diseño</option>
+                            <option value="2" >Judicial</option>
+                            <option value="3">Arquitectura</option>
+                            <option value="4">Medicina</option>
+                            <option value="5">Tecnologia</option>
+                            <option value="6">Motivacion Empresarial</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
 
 
 

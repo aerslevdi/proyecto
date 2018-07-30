@@ -70,6 +70,7 @@ class RegisterController extends Controller
           'iden' => 'required|unique:users|max:15',
           'telefono' => 'required|max:20',
           'foto' => 'max:1000',
+          'cate' =>'required',
           'direccion' => 'required|max:60',
           'entidad' => 'required',
           'password' => 'required|confirmed',
@@ -112,7 +113,7 @@ class RegisterController extends Controller
           'entidad'=>$data['entidad'],
           'direccion'=>$data['direccion'],
           'telefono'=>$data['telefono'],
-
+          'cate'=>$data['cate'],
           'foto'=> $path,
           'password'=>Hash::make($data['password']),
         ]);

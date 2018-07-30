@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->string('entidad');
             $table->string('foto');
-            
+            $table->string('cate')->default('1')->nullable();
             $table->string('ranking')->default('70');
             $table->string('email')->unique();
             $table->string('iden')->unique();
@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
 
           DB::table('users')->insert([
                      'name' => 'admin',
+                      'cate' => '0',
                      'email' => 'admin@isol.com',
                      'direccion'=>'0',
                      'telefono'=>'0',

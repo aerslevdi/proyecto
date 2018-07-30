@@ -25,7 +25,7 @@ class HomeController extends Controller
 
     public function index(){
 
-$prod=Categoria::all();
+$prod=Categoria::all()->take(6);
 
       return view('plantillas.productos')->with('productos',$prod);
     }
@@ -48,7 +48,8 @@ $prod=Categoria::all();
 
 
     public function listar() {
-    $usu=User::all();
+    $usu=User::paginate(2);
+;
 
 
       return view('plantillas.listar')
