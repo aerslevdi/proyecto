@@ -74,8 +74,11 @@ $prod=Categoria::all()->take(6);
              'email'=>$request->input('email'),
             ]);
             $mensj->save();
-            $cont=Contact::all();
-           return view('plantillas.mensaje') ->with('Mensajes',$cont);
+
+
+            $prod=Categoria::all()->take(6);
+
+                  return view('plantillas.productos')->with('productos',$prod);
 
              }
 

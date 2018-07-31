@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('foto');
             $table->string('cate')->default('1')->nullable();
             $table->string('ranking')->default('70');
-            $table->string('email')->unique();
-            $table->string('iden')->unique();
+            $table->string('email',60)->unique();
+            $table->string('iden',60)->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
