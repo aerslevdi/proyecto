@@ -90,9 +90,9 @@ $prod=Categoria::all()->take(6);
              function mensjD(Request $request){
                  $msj = Contact::find($request->input('id'));
                  $msj->delete();
-                 $cont=Contact::all();
-                return view('plantillas.mensaje') ->with('Mensajes',$cont);
+                 $prod=Categoria::all()->take(6);
 
+                       return view('plantillas.productos')->with('productos',$prod);
                }
 
 

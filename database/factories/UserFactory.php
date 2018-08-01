@@ -28,3 +28,13 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Contact::class, function (Faker $faker) {
+    return [
+        'mensj' => $faker->text,
+        'email' => $faker->unique()->safeEmail,
+        'IdEnvio'=>$faker->numberBetween(1,50),
+        'IdRe'=>$faker->numberBetween(1,50),
+
+    ];
+});
