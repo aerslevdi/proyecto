@@ -71,7 +71,7 @@
       </td>
 
       <td><a href="/perfil/{{$m->IdEnvio}}">{{$m->email}}</a></td>
-      <td class="hi"><pre>{{$m->mensj}}</pre></td>
+      <td class="hi">{{$m->mensj}}</td>
       <td> {{$m->created_at}}</td>
     </tr>
 @endforeach

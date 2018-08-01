@@ -12,19 +12,19 @@
 */
 
 
-Route::get('/mensajes{id}','HomeController@mensj');
+Route::get('/mensajes{id}','HomeController@mensj')->middleware('auth');
 
-Route::post('/mensajes{id}','HomeController@mensjD');
+Route::post('/mensajes{id}','HomeController@mensjD')->middleware('auth');
 
-Route::get('/usuarios{id}','HomeController@listar');
-Route::post('/usuarios{id}','HomeController@Contac');
+Route::get('/usuarios{id}','HomeController@listar')->middleware('auth');
+Route::post('/usuarios{id}','HomeController@Contac')->middleware('auth');
 
 Route::get('/perfil/{id}','HomeController@perfil');
 Route::get('/preguntas','HomeController@preguntas');
 
 
-Route::get('/cate','AdminCont@go');
-Route::post('/cate','AdminCont@add');
+Route::get('/cate','AdminCont@go')->middleware('auth');
+Route::post('/cate','AdminCont@add')->middleware('auth');
 
 
 

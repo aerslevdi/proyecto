@@ -48,6 +48,8 @@ $prod=Categoria::all()->take(6);
 
 
 
+
+
     public function listar($id) {
     $usu=User::all()->where('cate', $id);
 ;
