@@ -13,6 +13,7 @@
 	<div class="row">
   @foreach ($usuarios as $usu)
     @php
+    redirect('/index');
     $email = $usu->name;
     $hash = md5(strtolower(trim($email)));
     @endphp
