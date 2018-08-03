@@ -13,7 +13,7 @@
 <div class="row">
   <div class="col-sm"></div>
   <div class="col-sm"><h1>Agregar Categoria</h1>
-  <form method="POST"  action="/cate" >
+  <form method="POST"  id="form" action="/cate" >
     {{ csrf_field() }}
     <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
       <div class="col-sm-10">

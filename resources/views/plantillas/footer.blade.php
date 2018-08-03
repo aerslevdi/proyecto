@@ -1,5 +1,8 @@
 
       <footer >
+        <a href="#" id="ea" class="btn btn-sm btn-primary">Noche</a>
+        <a href="#" id="ea2" class="btn btn-sm btn-warning">Dia</a>
+
         <ul class="nave">
           <li><a href="/preguntas">-Preguntas Frecuentes-</a></li>
           <li><a href="#">-Sobre nosotros-</a></li>
