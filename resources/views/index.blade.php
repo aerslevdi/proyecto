@@ -13,9 +13,10 @@
     @yield('contenido')
 
     @include('plantillas.footer')
-    <script type="text/javascript" src="js/cosa.js">
-    </script>
-<script type="text/javascript" src="js/validate.js">
+
+<script type="text/javascript" src="/js/validate.js">
+
 </script>
+<script type="text/javascript" src="/js/contUsu.js"></script>
   </body>
 </html>

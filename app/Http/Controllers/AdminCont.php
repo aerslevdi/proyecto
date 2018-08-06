@@ -49,5 +49,10 @@ public function go(){
 
        return view('plantillas.cate');
     }
+    public function traer(){
+       $cont=User::all()->count();
+       return response()->json($cont);
+
+    }
 
   }

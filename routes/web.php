@@ -27,7 +27,7 @@ Route::get('/cate','AdminCont@go')->middleware('auth');
 Route::post('/cate','AdminCont@add')->middleware('auth');
 
 
-
+Route::get('/traer','AdminCont@traer');
 
 Route::get('/del','AdminCont@del');
 Route::post('/del','AdminCont@dele');
