@@ -14,9 +14,8 @@
 
     @include('plantillas.footer')
 
-<script type="text/javascript" src="/js/validate.js">
-
-</script>
-<script type="text/javascript" src="/js/contUsu.js"></script>
+    <script src="/js/validate.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/contUsu.js"></script>
   </body>
 </html>

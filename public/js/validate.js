@@ -1,15 +1,5 @@
 window.onload = function () {
 
-document.getElementById('ea').onclick = function () {
-  document.getElementById('theme_css').href = '../css/alt.css';
-
-}
-document.getElementById('ea2').onclick = function () {
-  document.getElementById('theme_css').href = '';
-
-}
-
-
 
 
 	var form = document.querySelector('#form');
@@ -19,24 +9,20 @@ document.getElementById('ea2').onclick = function () {
 	theInputs = Array.from(theInputs);
 	theInputs.pop();
 
-	for (var input of theInputs) {
-		input.addEventListener('blur', function () {
-			if (this.value.trim() === '') {
-				this.classList.add('is-invalid');
-				this.parentNode.querySelector('div').classList.add('error');
-				this.parentNode.querySelector('div').innerHTML = 'Este campo es <b>obligatorio</b>';
-			} else {
-				this.classList.remove('is-invalid');
-				this.parentNode.querySelector('div').classList.remove('error');
-				this.parentNode.querySelector('div').innerHTML = '';
-			}
-		});
+	// for (var input of theInputs) {
+	// 	input.addEventListener('blur', function () {
+	// 		if (this.value.trim() === '') {
+	// 			this.classList.add('is-invalid');
+	// 			this.parentNode.querySelector('div').classList.add('error');
+	// 			this.parentNode.querySelector('div').innerHTML = 'Este campo es <b>obligatorio</b>';
+	// 		} else {
+	// 			this.classList.remove('is-invalid');
+	// 			this.parentNode.querySelector('div').classList.remove('error');
+	// 			this.parentNode.querySelector('div').innerHTML = '';
+	// 		}
+	// 	});
 
-
-
-
-
-	}
+	// }
 
 
 	form.onsubmit = function (ev) {

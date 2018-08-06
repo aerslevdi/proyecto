@@ -1,4 +1,5 @@
 window.onload = function () {
+  console.log('contUsu')
   var usu = document.querySelector('[name=cont]');
   fetch('http://localhost:8000/traer')
   .then(function(response) {
@@ -11,7 +12,7 @@ window.onload = function () {
 
 
   setInterval(function() {
-      //call $.ajax here
+
 
   fetch('http://localhost:8000/traer')
   .then(function(response) {
