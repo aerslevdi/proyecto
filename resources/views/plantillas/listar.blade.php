@@ -28,7 +28,7 @@
        <br>
         <div class="card">
     @if ($usu->foto==1)
-       <img  src="https://unicornify.pictures/avatar/{{$hash}}?s=740" class="img-thumbnail tam" />
+       <img  src="https://loremflickr.com/320/240/muppets?random={{$usu->id}}" class="img-thumbnail tam" />
     @else
          <img src="{{Storage::url($usu->foto)}}" class="img-thumbnail tam">
 @endif

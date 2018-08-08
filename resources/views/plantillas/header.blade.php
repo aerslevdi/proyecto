@@ -60,7 +60,7 @@
                                      <button  class=" dropdown-item "type="submit" name="button">Mensajes</button>
                                    </form>
 
-                            
+
 
 
 
@@ -93,8 +93,8 @@
           <a href="">Servicios</a>
     </div>
     <div class="opcion seva" >
-      <img src="/img/chango.png" alt="">
-          <a href="">Carrito</a>
+      <img src="/img/envelope.png" alt="">
+          <a href="">Contacto</a>
     </div>
     <div class="opcion desktop">
 
