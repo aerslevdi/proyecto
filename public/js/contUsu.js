@@ -1,4 +1,4 @@
-window.onload = function () {
+window.addEventListener ('load', function () {
   console.log('contUsu')
   var usu = document.querySelector('[name=cont]');
   fetch('http://localhost:8000/traer')
@@ -23,3 +23,4 @@ window.onload = function () {
         usu.value = data;
   });  },30000);
 }
+)
