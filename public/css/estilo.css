@@ -16,7 +16,9 @@ html{font-size: 14px;}
 a{text-decoration: none;
   display: block;}
 
-                                  /* FIN RESET */
+.tam{
+  max-height: 200px;
+  }                                /* FIN RESET */
                                   /* LOGO DEL MEDIO */
 .med{
   padding: 10px 0;

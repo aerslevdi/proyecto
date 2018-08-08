@@ -3,15 +3,21 @@
 @section('contenido')
 
 
-@php
-  echo $errors ;
-@endphp
+
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Registro') }}</div>
+  @if ($errors->any())
+                  <div class="alert alert-secondary" role="alert">
 
+                        <p>Hay campos con errores</p>
+
+                  </div>  @endif
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}"  id="form" aria-label="{{ __('Register') }}"
                     enctype="multipart/form-data">
@@ -66,7 +72,7 @@
 
                             <div class="col-md-6">
                                 <select class="" name="cate">
-                                <option value="500" selected>Seleccione aqui</option>
+                                <option value="" selected>Seleccione aqui</option>
                             <option value="1" >Diseño</option>
                             <option value="2" >Judicial</option>
                             <option value="3">Arquitectura</option>

@@ -12,9 +12,9 @@
 */
 
 
-Route::get('/mensajes{id}','HomeController@mensj')->middleware('auth');
+Route::get('/mensajes','HomeController@mensj')->middleware('auth');
 
-Route::post('/mensajes{id}','HomeController@mensjD')->middleware('auth');
+Route::post('/mensajes','HomeController@mensjD')->middleware('auth');
 
 Route::get('/usuarios{id}','HomeController@listar')->middleware('auth');
 Route::post('/usuarios{id}','HomeController@Contac')->middleware('auth');

@@ -84,17 +84,22 @@ $prod=Categoria::all()->take(6);
 
              }
 
-             function mensj($id){
-               $cont=Contact::all()->where('IdRe', $id);
+             function mensj(Request $request){
+               $cont=Contact::all()->where('IdRe', $request->input('id'));
               return view('plantillas.mensaje') ->with('Mensajes',$cont);
              }
 
              function mensjD(Request $request){
                  $msj = Contact::find($request->input('id'));
                  $msj->delete();
-                 $prod=Categoria::all()->take(6);
 
-                       return view('plantillas.productos')->with('productos',$prod);
+                 $cont=Contact::all()->where('IdRe', $request->input('iduser'));
+                 return view('plantillas.mensaje') ->with('Mensajes',$cont);
+
+
+
+        
+
                }
 
 

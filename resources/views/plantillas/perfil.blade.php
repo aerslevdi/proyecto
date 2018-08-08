@@ -18,7 +18,11 @@
                 $email = $usu->email;
                 $hash = md5(strtolower(trim($email)));        @endphp
 
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src='https://unicornify.pictures/avatar/{{$hash}}?s=640'  class="img-circle img-responsive"> </div>
+                @if ($usu->foto==1)
+                   <img  src="https://unicornify.pictures/avatar/{{$hash}}?s=740" class=" tam img-thumbnail" />
+                @else
+                     <img src="{{Storage::url($usu->foto)}}" class=" tam img-thumbnail">
+            @endif
 
                 <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
@@ -50,6 +54,7 @@
                   </table>
 
                   <!-- Button trigger modal -->
+                  
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                Contactar
                              </button>

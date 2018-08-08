@@ -18,7 +18,7 @@
     <tr>
       <td>
 
-        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary btn-success" data-toggle="modal" data-target="#exampleModal">
                      Responder
                    </button>
 
@@ -62,10 +62,11 @@
 
 
 
-        <form class="" action="/mensajes{{Auth::user()->id}}" method="post">
+        <form class="" action="/mensajes" method="post">
             @csrf
           <input type="hidden" name="id" value="{{$m->id}}">
-          <button type="submit" name="button">Eliminar</button>
+            <input type="hidden" name="iduser" value="{{Auth::user()->id}}">
+          <button  class="btn btn-primary btn-danger"type="submit" name="button">Eliminar</button>
         </form>
 
       </td>

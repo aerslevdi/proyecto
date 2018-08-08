@@ -28,9 +28,9 @@
        <br>
         <div class="card">
     @if ($usu->foto==1)
-       <img  src="https://unicornify.pictures/avatar/{{$hash}}?s=740" class="img-thumbnail" />
+       <img  src="https://unicornify.pictures/avatar/{{$hash}}?s=740" class="img-thumbnail tam" />
     @else
-         <img src="{{Storage::url($usu->foto)}}" class="img-thumbnail">
+         <img src="{{Storage::url($usu->foto)}}" class="img-thumbnail tam">
 @endif
          <div class="content">
              <p>{{$usu->name}} <br>
@@ -39,7 +39,7 @@
              </div>
              </p>
              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{ $usu->id }}">
-                            Contactar 
+                            Contactar
                           </button>
 
                           <!-- Modal -->

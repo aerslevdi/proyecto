@@ -53,9 +53,17 @@
                                        {{ __('Perfil') }}
                                    </a>
 
-                                  <a class="dropdown-item" href="/mensajes{{Auth::user()->id}}">
-                                      {{ __('Mensajes') }}
-                                  </a>
+
+                                   <form class="" action="/mensajes" method="get">
+                                       @csrf
+                                     <input type="hidden" name="id" value="{{Auth::user()->id}}">
+                                     <button  class=" dropdown-item "type="submit" name="button">Mensajes</button>
+                                   </form>
+
+                            
+
+
+
                                      <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                       document.getElementById('logout-form').submit();">
