@@ -14,7 +14,7 @@
 <br>
 
 
-<div class="container">
+<div class="container alt-color">
                 <div class="jumbotron">
                   <div class="row">
                       <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">

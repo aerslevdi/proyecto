@@ -108,7 +108,15 @@
   </div>
 
 </header>
+@if ($_COOKIE['css'] == 'ea')
+  <div class="med">
+    <img src="/img/este-noche.png" alt="">
+  </div>
 
-<div class="med">
-  <img src="/img/este.png" alt="">
-</div>
+@endif
+
+ @if ($_COOKIE['css'] == 'ea2')
+   <div class="med">
+     <img src="/img/este.png" alt="">
+   </div>
+@endif
