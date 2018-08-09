@@ -102,7 +102,7 @@
     </div>
     <div class="opcion desktop">
 
-          <a href="">Empresas que nos eligen</a>
+          <a href="/clientes">Empresas que nos eligen</a>
     </div>
 
   </div>

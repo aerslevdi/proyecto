@@ -35,7 +35,9 @@ $prod=Categoria::all()->take(6);
     }
 
 
-
+    public function clientes(){
+      return view('plantillas.clientes');
+    }
 
 
 
@@ -98,7 +100,7 @@ $prod=Categoria::all()->take(6);
 
 
 
-        
+
 
                }
 
