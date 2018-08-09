@@ -38,7 +38,12 @@ $prod=Categoria::all()->take(6);
     public function clientes(){
       return view('plantillas.clientes');
     }
-
+    public function contact(){
+      return view('plantillas.contacto');
+    }
+    public function about(){
+      return view('plantillas.about');
+    }
 
 
     public function perfil($id){

@@ -94,11 +94,11 @@
     </div>
     <div class="opcion seva" >
       <img src="/img/envelope.png" alt="">
-          <a href="">Contacto</a>
+          <a href="/contacto">Contacto</a>
     </div>
     <div class="opcion desktop">
 
-          <a href="">Contacto</a>
+          <a href="/contacto">Contacto</a>
     </div>
     <div class="opcion desktop">
 

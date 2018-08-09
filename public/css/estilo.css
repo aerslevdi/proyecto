@@ -141,7 +141,10 @@ font-family: 'Quicksand', sans-serif;
     color: white;
     font-family: 'PT Sans', sans-serif;
 }
+.client h1 {
 
+  text-align: center;
+}
                                         /* FIN PRODUCTOS */
 
 
