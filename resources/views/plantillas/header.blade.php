@@ -115,7 +115,7 @@
 
 @endif
 
- @if ($_COOKIE['css'] == 'ea2')
+ @if (!isset($_COOKIE['css'] == 'ea2'))
    <div class="med">
      <img src="/img/este.png" alt="">
    </div>
