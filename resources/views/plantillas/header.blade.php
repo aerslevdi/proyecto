@@ -108,15 +108,19 @@
   </div>
 
 </header>
-@if ($_COOKIE['css'] == 'ea')
+@if (!isset($_COOKIE['css']))
+   <div class="med">
+     <img src="/img/este.png" alt="">
+   </div>
+@elseif ($_COOKIE['css'] == 'ea2'))
+<div class="med">
+  <img src="/img/este.png" alt="">
+</div>
+
+
+@else
   <div class="med">
     <img src="/img/este-noche.png" alt="">
   </div>
 
-@endif
-
- @if (!isset($_COOKIE['css'] == 'ea2'))
-   <div class="med">
-     <img src="/img/este.png" alt="">
-   </div>
 @endif
