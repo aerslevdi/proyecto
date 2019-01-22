@@ -33,6 +33,10 @@ $prod=Categoria::all()->take(6);
     public function preguntas(){
       return view('plantillas.preguntas');
     }
+    public function categorias (){
+      $prod=Categoria::all();
+      return view('plantillas.categorias')->with('productos',$prod);
+    }
 
 
     public function clientes(){

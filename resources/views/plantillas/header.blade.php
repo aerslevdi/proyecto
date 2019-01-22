@@ -112,7 +112,7 @@
    <div class="med">
      <img src="/img/este.png" alt="">
    </div>
-@elseif ($_COOKIE['css'] == 'ea2'))
+@elseif ($_COOKIE['css'] == 'ea2')
 <div class="med">
   <img src="/img/este.png" alt="">
 </div>

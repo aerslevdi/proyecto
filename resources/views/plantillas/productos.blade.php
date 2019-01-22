@@ -40,7 +40,7 @@ $hash = md5(strtolower(trim($email)));
 
 
   <div class="vermas">
-    <a href="/usuarios">VER MAS SERVICIOS</a>
+    <a href="/categorias">VER MAS SERVICIOS</a>
   </div>
 
   </div>

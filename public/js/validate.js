@@ -25,26 +25,17 @@
  }
 
 
-	form.onsubmit = function (ev) {
-	var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-    	var inputEmail = form.querySelector('input[name=email]');
-		if (
-			theInputs[0].value.trim() === '' ||
-			theInputs[1].value.trim() === '' ||
-      theInputs[2].value.trim() === '' ||
-			theInputs[3].value.trim() === '' ||
-      theInputs[4].value.trim() === '' ||
-      theInputs[5].value.trim() === '' ||
-      theInputs[6].value.trim() === '' ||
-      theInputs[7].value.trim() === '' ||
-      theInputs[9].value.trim() === '' ||
-      theInputs[10].value.trim() === '' ||
-      theInputs[12].value.trim() === '' ||
-            			!regexEmail.test(inputEmail.value)
-
-		) {
-			ev.preventDefault();
-			window.alert('Campos Incorrectos');
-		}
+ form.onsubmit = function (ev) {
+ 		var nuevoArray = new Array();
+ 	var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+     	var inputEmail = form.querySelector('input[name=email]');
+ 			for (var i = 0; i < theInputs.length; i++) {
+ 				if(theInputs[i].value.trim() === '' || !regexEmail.test(inputEmail.value)){
+ 					nuevoArray.push(i);
+ 				}
+ 			}
+ 			if (nuevoArray.length === 0){
+ 				ev.preventDefault();
+ 				window.alert('Campos Incorrectos'+' '+ nuevoArray.join('\n'))
+ 			}
 	};
-

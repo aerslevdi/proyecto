@@ -12,12 +12,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Registro') }}</div>
-  @if ($errors->any())
+  <!--@if ($errors->any())
                   <div class="alert alert-secondary" role="alert">
 
                         <p>Hay campos con errores</p>
 
-                  </div>  @endif
+                  </div>  @endif-->
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}"  id="form" aria-label="{{ __('Register') }}"
                     enctype="multipart/form-data">

@@ -68,7 +68,7 @@ class RegisterController extends Controller
           'name' => 'required|max:40|string',
           'email' => 'required|unique:users|max:60|email',
           'iden' => 'integer|required|unique:users',
-          'telefono' => 'integer|required',
+          'telefono' => 'required|regex:^[1-9][0-9]+^|not_in:0',
           'foto' => 'max:1000',
           'cate' =>'required',
           'direccion' => 'required|max:60',
