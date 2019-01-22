@@ -78,6 +78,27 @@ class RegisterController extends Controller
         ]);
     }
 
+    protected function fValidator(array $datos){
+      {
+
+          $data= [
+            'name' => 'required|max:40|string',
+            'email' => 'required|max:60|email',
+            'iden' => 'integer|required',
+            'telefono' => 'required|regex:^[1-9][0-9]+^|not_in:0',
+            'foto' => 'max:1000',
+            'cate' =>'required',
+            'direccion' => 'required|max:60',
+            'entidad' => 'required',
+            'password' => 'required|confirmed',
+            'terminos' => 'required',
+          ];
+          $mensajes=['required' => 'Los campos con * son obligatorios',
+          ];
+          $this->validate($datos,$data);
+      }
+    }
+
 
 
     /**
