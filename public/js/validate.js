@@ -30,17 +30,4 @@
  }
 
 
- form.onsubmit = function (ev) {
- 		var nuevoArray = new Array();
- 	  var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-    var inputEmail = form.querySelector('input[name=email]');
- 			for (var i = 0; i < theInputs.length; i++) {
- 				if(theInputs[i].value.trim() === '' || !regexEmail.test(inputEmail.value)){
- 					nuevoArray.push(i);
- 				}
- 			}
- 			if (nuevoArray.length === 0){
- 				ev.preventDefault();
- 				window.alert('Campos Incorrectos'+' '+ nuevoArray.join('\n'))
- 			}
-	};
+ 
