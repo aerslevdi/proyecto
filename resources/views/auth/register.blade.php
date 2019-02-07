@@ -26,7 +26,10 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('*Nombre Completo/Empresa') }}</label>
 
+
                             <div class="col-md-6">
+                              <div></div>
+
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="ej:Pablo Gomez,ej:Telefonica" . autofocus>
 
                                 @if ($errors->has('name'))
@@ -41,6 +44,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('*Email') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <input id="email" type="mail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="ejemplo@exp.com">
 
                                 @if ($errors->has('email'))
@@ -57,6 +61,7 @@
                             <label for="iden" class="col-md-4 col-form-label text-md-right">{{ __('*DNI/CUIT') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <input id="iden" type="text" class="form-control{{ $errors->has('iden') ? ' is-invalid' : '' }}" name="iden" value="{{ old('iden') }}" placeholder="2312743421"  >
 
                                 @if ($errors->has('iden'))
@@ -71,6 +76,7 @@
                             <label for="cate" class="col-md-4 col-form-label text-md-right">{{ __('*Area de trabajo') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <select class="" name="cate">
                                 <option value="" selected>Seleccione aqui</option>
                             <option value="1" >Diseño</option>
@@ -92,6 +98,7 @@
                             <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('*Telefono') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <input id="tel" type="tel" class="form-control{{ $errors->has('telefono') ? ' is-invalid' : '' }}" name="telefono" value="{{ old('telefono') }}" placeholder="(011)15-743421" .>
 
                                 @if ($errors->has('telefono'))
@@ -108,6 +115,7 @@
                             <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('*Direccion de Domicilio') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <input id="direccion" type="text" class="form-control{{ $errors->has('direccion') ? ' is-invalid' : '' }}" name="direccion" placeholder="Buenos Aires" value="{{ old('direccion') }}" .>
 
                                 @if ($errors->has('direccion'))
@@ -123,6 +131,7 @@
                             <label for="entidad" class="col-md-4 col-form-label text-md-right">{{ __('Entidad') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
 
                                 <select class="" name="entidad">
                                   <option value="0">Empresa</option>
@@ -142,6 +151,7 @@
                         <div class="form-group row">
                             <label for="foto" class="col-md-4 col-form-label text-md-right">{{ __('Foto perfil o Logo:') }}</label>
                             <div class="col-md-6">
+                              <div></div>
                                 <input type="file" name="foto">
 
                                 </select>
@@ -155,6 +165,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" .>
 
                                 @if ($errors->has('password'))
@@ -169,6 +180,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Comfirmar contraseña') }}</label>
 
                             <div class="col-md-6">
+                              <div></div>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" .>
                             </div>
                         </div>
@@ -186,6 +198,7 @@
                       <div class="form-group row">
                           <label for="terminos" class="col-md-4 col-form-label text-md-right">{{ __('Acepto terminos y condiciones') }}</label>
                           <div class="col-md-6">
+                            <div></div>
                             <input type="checkbox" name="terminos"  value="1">
                               </select>
                           </div>

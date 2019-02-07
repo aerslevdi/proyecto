@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="med">
+  <img src="/img/este.png" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container alt-color">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Registro</div>
+  <!---->
+                <div class="card-body">
+                    <form method="POST" action="http://localhost:8000/register"  id="form" aria-label="Register"
+                    enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="3q7MIsqFJyLrJZqssh8Mz1aSHNYjB0HvCsged1sg">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">*Nombre Completo/Empresa</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="" placeholder="ej:Pablo Gomez,ej:Telefonica" . autofocus>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">*Email</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="mail" class="form-control" name="email" value="" placeholder="ejemplo@exp.com">
+
+                                                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="iden" class="col-md-4 col-form-label text-md-right">*DNI/CUIT</label>
+
+                            <div class="col-md-6">
+                                <input id="iden" type="text" class="form-control" name="iden" value="" placeholder="2312743421"  >
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cate" class="col-md-4 col-form-label text-md-right">*Area de trabajo</label>
+
+                            <div class="col-md-6">
+                                <select class="" name="cate">
+                                <option value="" selected>Seleccione aqui</option>
+                            <option value="1" >Diseño</option>
+                            <option value="2" >Judicial</option>
+                            <option value="3">Arquitectura</option>
+                            <option value="4">Medicina</option>
+                            <option value="5">Tecnologia</option>
+                            <option value="6">Motivacion Empresarial</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group row">
+                            <label for="tel" class="col-md-4 col-form-label text-md-right">*Telefono</label>
+
+                            <div class="col-md-6">
+                                <input id="tel" type="tel" class="form-control" name="telefono" value="" placeholder="(011)15-743421" .>
+
+                                                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="direccion" class="col-md-4 col-form-label text-md-right">*Direccion de Domicilio</label>
+
+                            <div class="col-md-6">
+                                <input id="direccion" type="text" class="form-control" name="direccion" placeholder="Buenos Aires" value="" .>
+
+                                                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="entidad" class="col-md-4 col-form-label text-md-right">Entidad</label>
+
+                            <div class="col-md-6">
+
+                                <select class="" name="entidad">
+                                  <option value="0">Empresa</option>
+                                  <option value="1">Persona</option>
+
+
+                                </select>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group row">
+                            <label for="foto" class="col-md-4 col-form-label text-md-right">Foto perfil o Logo:</label>
+                            <div class="col-md-6">
+                                <input type="file" name="foto">
+
+                                </select>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" .>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Comfirmar contraseña</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" .>
+                            </div>
+                        </div>
+
+                      <div class="form-group row">
+                          <label for="mailing" class="col-md-4 col-form-label text-md-right">Desea recibir noticias ?</label>
+                          <div class="col-md-6">
+                            <input type="checkbox" name="mailing"  value="">
+                              </select>
+                          </div>
+                        </div>
+
+
+
+                      <div class="form-group row">
+                          <label for="terminos" class="col-md-4 col-form-label text-md-right">Acepto terminos y condiciones</label>
+                          <div class="col-md-6">
+                            <input type="checkbox" name="terminos"  value="1">
+                              </select>
+                          </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Registrate
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer >
+        <div class="centrado">
+
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Usuarios registrados</span>
+                  </div>
+                <input type="text" name="cont"  disabled id="cont" value="" >
+
+                </div>
+        </div>
+        <a href="#" id="ea" class="btn btn-sm btn-primary">Noche</a>
+        <a href="#" id="ea2" class="btn btn-sm btn-warning">Dia</a>
+
+
+
+
+
+        <ul class="nave">
+          <li><a href="/preguntas">-Preguntas Frecuentes-</a></li>
+          <li><a href="/about">-Sobre nosotros-</a></li>
+          <li><a href="/contacto">-Contacto-</a></li>      </ul>
+<div class="centrado">
+
+
+
+
+        <a class="social" href="#">  <img src="/img/face.svg" alt="face.png"></a>
+
+          <a class="social" href="#">  <img src="/img/instagram.svg" alt="instagram.svg"></a>
+
+        <a  class="social" href="#">    <img src="/img/twitter.svg" alt="twitter.svg"></a>
+
+
+
+</div>
+
+
+
+      </footer>
+
+    <script src="/js/validate.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/contUsu.js"></script>
+  </body>
+</html>2
+
+  </body>
+</html>

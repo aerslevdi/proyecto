@@ -93,8 +93,8 @@ class RegisterController extends Controller
             'password' => 'required|confirmed',
             'terminos' => 'required',
           ];
-          $mensajes=['required' => 'Los campos con * son obligatorios',
-          ];
+
+
           $this->validate($datos,$data);
       }
     }
